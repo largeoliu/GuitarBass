@@ -48,6 +48,7 @@
 		C53AB2B318D189F800BA90E7 /* GBSeriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSeriesModel.m; sourceTree = "<group>"; };
 		C53AB2B518D18A3200BA90E7 /* GBInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoModel.h; sourceTree = "<group>"; };
 		C53AB2B618D18A3200BA90E7 /* GBInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoModel.m; sourceTree = "<group>"; };
+		C56FF8E818D45F5E005F8DB1 /* GBSeriesTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSeriesTableViewControllerDelegate.h; sourceTree = "<group>"; };
 		C5AA214318D2A0E0004F5AA4 /* GBSeriesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSeriesList.h; sourceTree = "<group>"; };
 		C5AA214418D2A0E0004F5AA4 /* GBSeriesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSeriesList.m; sourceTree = "<group>"; };
 		C5AA214618D2A0F5004F5AA4 /* GBInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoList.h; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 				C53AB27918D14BA000BA90E7 /* Supporting Files */,
 				C53AB2B118D1870D00BA90E7 /* Model */,
 				C53AB2A518D158B300BA90E7 /* ViewController */,
+				C56FF8E718D45F4D005F8DB1 /* Interface */,
 				C53AB2A118D1526B00BA90E7 /* thirdParty */,
 				C53AB2AC18D15C8400BA90E7 /* Resources */,
 			);
@@ -163,6 +165,14 @@
 				C5AA214718D2A0F5004F5AA4 /* GBInfoList.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C56FF8E718D45F4D005F8DB1 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				C56FF8E818D45F5E005F8DB1 /* GBSeriesTableViewControllerDelegate.h */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

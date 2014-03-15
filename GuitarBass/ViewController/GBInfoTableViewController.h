@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GBSeriesModel.h"
+#import "GBSeriesTableViewControllerDelegate.h"
 
-@interface GBInfoTableViewController : UITableViewController
+@interface GBInfoTableViewController : UITableViewController<GBSeriesTableViewControllerDelegate>
 
 @end

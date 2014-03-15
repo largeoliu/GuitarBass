@@ -7,31 +7,62 @@
 //
 
 #import "GBSeriesTableViewController.h"
+#import "GBAppDelegate.h"
 
 @interface GBSeriesTableViewController ()
 
 @end
 
 @implementation GBSeriesTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize delegate = _delegate;
+- (id)init
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        // Custom initialization
+        self.view.backgroundColor = [UIColor colorWithRed:45/255.0 green:45/255.0 blue:45/255.0 alpha:1.0];
     }
     return self;
+}
+
+
+- (void)loadData
+{
+    GBSeriesList *seriesList = [[GBSeriesList alloc] init];
+    
+    GBSeriesModel *sm1 = [[GBSeriesModel alloc] init];
+    sm1.title = @"2014年第一期";
+    [seriesList addInfo:sm1];
+    
+    GBSeriesModel *sm2 = [[GBSeriesModel alloc] init];
+    sm2.title = @"2014年第二期";
+    [seriesList addInfo:sm2];
+    
+    [self onReceiveSeriesListSucceed:seriesList];
+}
+
+- (void)onReceiveSeriesListSucceed:(GBSeriesList*)seriesList
+{
+    _seriesList = nil;
+    _seriesList = seriesList;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    CGRect tableFrame = self.view.bounds;
+    tableFrame.origin.y = 20;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
+    [self.view addSubview:_tableView];
+    
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.separatorInset = UIEdgeInsetsMake(0, -20, 0, 0);
+    _tableView.separatorColor = [UIColor blackColor];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,76 +75,49 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if (!_seriesList) {
+        return 0;
+    }
+    return _seriesList.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    static NSString *cellIdentifier = @"SeriesCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+         cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:18];
+ 
+        cell.selectedBackgroundView = [[UIView alloc] init];
+        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0];
+    }
+    GBSeriesModel *seriesModel = [_seriesList infoAtIndex:indexPath.row];
+    cell.textLabel.text = seriesModel.title;
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    GBSeriesModel *seriesModel = [_seriesList infoAtIndex:indexPath.row];
+    if (_delegate) {
+        [_delegate loadSeries:seriesModel];
+    }
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    DDMenuController *menuController = [GBAppDelegate defaultAppDelegate].menuController;
+    [menuController showRootController:YES];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

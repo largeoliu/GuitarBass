@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GBSeriesList.h"
+#import "GBSeriesTableViewControllerDelegate.h"
 
-@interface GBSeriesTableViewController : UITableViewController
-
+@interface GBSeriesTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+{
+    UITableView *_tableView;
+    __strong GBSeriesList *_seriesList;
+}
+@property (weak) id<GBSeriesTableViewControllerDelegate> delegate;
 @end

@@ -403,7 +403,8 @@
     }
     
     if (_menuFlags.canShowLeft) {
-        UIBarButtonItem *button = [[barButtonItemClass alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showLeft:)];
+//        UIBarButtonItem *button = [[barButtonItemClass alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showLeft:)];
+        UIBarButtonItem *button = [[barButtonItemClass alloc] initWithTitle:@"目录" style:UIBarButtonItemStyleBordered target:self action:@selector(showLeft:)];
         topController.navigationItem.leftBarButtonItem = button;
     } else {
 		if(topController.navigationItem.leftBarButtonItem.target == self) {
@@ -745,5 +746,6 @@
     [self showRightController:YES];
     
 }
+
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "GBAppDelegate.h"
-#import "DDMenuController.h"
 #import "GBInfoTableViewController.h"
 #import "GBSeriesTableViewController.h"
 
@@ -16,8 +15,18 @@
 @synthesize window = _window;
 @synthesize menuController = _menuController;
 
+static id currentAppDelegate = nil;
+
++ (GBAppDelegate *)defaultAppDelegate
+{
+    return currentAppDelegate;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    currentAppDelegate = self;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     GBInfoTableViewController *mainController = [[GBInfoTableViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
@@ -27,6 +36,7 @@
     
     GBSeriesTableViewController *leftController = [[GBSeriesTableViewController alloc] init];
     rootController.leftViewController = leftController;
+    leftController.delegate = mainController;
     
     self.window.rootViewController = rootController;
     
