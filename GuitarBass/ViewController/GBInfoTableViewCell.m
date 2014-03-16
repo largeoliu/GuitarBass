@@ -43,8 +43,6 @@
 
 - (void)loadWithInfo:(GBInfoModel*)info
 {
-    _info = info;
-    
     _titleLabel.text = info.title;
     CGSize size = CGSizeMake(InfoTitleWidth, CGRectGetHeight(_thumbImageView.frame));
     CGSize labelsize = [info.title sizeWithFont:_titleLabel.font constrainedToSize:size lineBreakMode:NSLineBreakByWordWrapping];

@@ -14,8 +14,6 @@
 {
     EGOImageView *_thumbImageView;
     UILabel *_titleLabel;
-    
-    GBInfoModel *_info;
 }
 + (CGFloat)height;
 - (void)loadWithInfo:(GBInfoModel*)info;

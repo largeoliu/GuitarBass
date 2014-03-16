@@ -36,6 +36,19 @@
     GBSeriesModel *sm2 = [[GBSeriesModel alloc] init];
     sm2.title = @"2014年第二期";
     [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    [seriesList addInfo:sm2];
+    
     
     [self onReceiveSeriesListSucceed:seriesList];
 }
@@ -51,13 +64,19 @@
     [super loadView];
     
     CGRect tableFrame = self.view.bounds;
-    tableFrame.origin.y = 20;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        tableFrame.origin.y = 20;
+        tableFrame.size.height -= 20;
+    }
+    
     
     _tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
     [self.view addSubview:_tableView];
     
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.separatorInset = UIEdgeInsetsMake(0, -20, 0, 0);
+    if ([_tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        _tableView.separatorInset = UIEdgeInsetsMake(0, -20, 0, 0);
+    }
     _tableView.separatorColor = [UIColor blackColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -92,10 +111,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-         cell.backgroundColor = [UIColor clearColor];
+        cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:18];
- 
+        
         cell.selectedBackgroundView = [[UIView alloc] init];
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0];
     }
@@ -113,7 +132,7 @@
     if (_delegate) {
         [_delegate onLoadSeries:seriesModel];
     }
-
+    
     DDMenuController *menuController = [GBAppDelegate defaultAppDelegate].menuController;
     [menuController showRootController:YES];
 }

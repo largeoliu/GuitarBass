@@ -16,6 +16,7 @@
 		C531F8E118D56A290043D0D5 /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8DC18D56A290043D0D5 /* EGOImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C531F8E418D580CF0043D0D5 /* GBInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8E318D580CF0043D0D5 /* GBInfoTableViewCell.m */; };
 		C531F8E718D592A50043D0D5 /* GBInfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8E618D592A50043D0D5 /* GBInfoDetailViewController.m */; };
+		C531F8EB18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8EA18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m */; };
 		C53AB27318D14BA000BA90E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27218D14BA000BA90E7 /* Foundation.framework */; };
 		C53AB27518D14BA000BA90E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27418D14BA000BA90E7 /* CoreGraphics.framework */; };
 		C53AB27718D14BA000BA90E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27618D14BA000BA90E7 /* UIKit.framework */; };
@@ -53,6 +54,8 @@
 		C531F8E318D580CF0043D0D5 /* GBInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoTableViewCell.m; sourceTree = "<group>"; };
 		C531F8E518D592A50043D0D5 /* GBInfoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoDetailViewController.h; sourceTree = "<group>"; };
 		C531F8E618D592A50043D0D5 /* GBInfoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoDetailViewController.m; sourceTree = "<group>"; };
+		C531F8E918D5AA4D0043D0D5 /* AMScrollingNavbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMScrollingNavbarViewController.h; sourceTree = "<group>"; };
+		C531F8EA18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMScrollingNavbarViewController.m; sourceTree = "<group>"; };
 		C53AB26F18D14BA000BA90E7 /* GuitarBass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarBass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53AB27218D14BA000BA90E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C53AB27418D14BA000BA90E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -167,6 +170,15 @@
 			path = GuitarBass/thirdParty/EGOImageLoading/EGOImageView;
 			sourceTree = SOURCE_ROOT;
 		};
+		C531F8E818D5AA4D0043D0D5 /* AMScrollingNavbar */ = {
+			isa = PBXGroup;
+			children = (
+				C531F8E918D5AA4D0043D0D5 /* AMScrollingNavbarViewController.h */,
+				C531F8EA18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m */,
+			);
+			path = AMScrollingNavbar;
+			sourceTree = "<group>";
+		};
 		C53AB26618D14BA000BA90E7 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +238,7 @@
 		C53AB2A118D1526B00BA90E7 /* thirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C531F8E818D5AA4D0043D0D5 /* AMScrollingNavbar */,
 				C531F8B718D568800043D0D5 /* EGOImageLoading */,
 				C531F8C418D568800043D0D5 /* SlideMenu */,
 			);
@@ -366,6 +379,7 @@
 				C531F8DD18D56A290043D0D5 /* EGOCache.m in Sources */,
 				C531F8DE18D56A290043D0D5 /* EGOImageButton.m in Sources */,
 				C53AB2A818D158F000BA90E7 /* GBInfoTableViewController.m in Sources */,
+				C531F8EB18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m in Sources */,
 				C53AB28318D14BA000BA90E7 /* GBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

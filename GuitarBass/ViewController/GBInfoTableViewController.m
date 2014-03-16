@@ -18,10 +18,9 @@
 
 - (id)init
 {
-    self = [super initWithStyle:UITableViewStylePlain];
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:29.0/255.0 green:29.0/255.0 blue:29.0/255.0 alpha:1.0]];
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        self.title = @"GuitarBass";
         
         NSShadow *shadow = [[NSShadow alloc] init];
         shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
@@ -35,20 +34,50 @@
     return self;
 }
 
+- (void)loadView
+{
+    [super loadView];
+    
+    CGRect tableFrame = self.view.bounds;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height+20;
+    }else{
+        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
+    }
+    
+    _tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
+    [self.view addSubview:_tableView];
+    
+    _tableView.backgroundColor = [UIColor whiteColor];
+    if ([_tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        _tableView.separatorInset = UIEdgeInsetsMake(0, -20, 0, 0);
+    }
+    
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.showsVerticalScrollIndicator = YES;
+}
+
 - (void)loadData
 {
+    
     GBInfoList *infoList = [[GBInfoList alloc] init];
     
     GBInfoModel *info1 = [[GBInfoModel alloc] init];
     info1.title = @"【Livehouse终极攻略】武汉 VOX Livehouse";
     info1.thumbUrl = @"http://musicianguide.cn/wp-content/uploads/2014/01/MG_2955.jpg";
-    info1.webUlr = @"http://guitarbass.sinaapp.com/app/article?aid=1";
+    info1.webUlr = @"http://guitarbass.sinaapp.com/app/article?aid=2";
     [infoList addInfo:info1];
     
     GBInfoModel *info2 = [[GBInfoModel alloc] init];
     info2.title = @"音乐人的另一个舞台：名片音乐人的另一个舞台：名片音乐人的另一个舞台：名片音乐人的另一个舞台：名片";
     info2.thumbUrl = @"http://musicianguide.cn/wp-content/uploads/2014/01/bart-business-card1.jpg";
-    info2.webUlr = @"http://guitarbass.sinaapp.com/app/article?aid=2";
+    info2.webUlr = @"http://tinman.cn";
+    [infoList addInfo:info2];
+    [infoList addInfo:info2];
+    [infoList addInfo:info2];
+    [infoList addInfo:info2];
+    [infoList addInfo:info2];
     [infoList addInfo:info2];
     
     [self onReceiveInfoListSucceed:infoList];
@@ -58,7 +87,7 @@
 {
     _infoList = nil;
     _infoList = infoList;
-    [self.tableView reloadData];
+    [_tableView reloadData];
 }
 
 - (void)onLoadSeries:(GBSeriesModel*)seriesModel
@@ -73,7 +102,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.separatorInset = UIEdgeInsetsMake(0, -20, 0, 0);
+    [self.navigationController.navigationBar setTranslucent:NO];
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)]) {
+        [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:29.0/255.0 green:29.0/255.0 blue:29.0/255.0 alpha:1.0]];
+        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    }else{
+        [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:29.0/255.0 green:29.0/255.0 blue:29.0/255.0 alpha:1.0]];
+    }
+    
 }
 
 #pragma mark - Table view data source

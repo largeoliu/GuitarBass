@@ -23,32 +23,45 @@
     return self;
 }
 
+- (void)loadView
+{
+    [super loadView];
+    
+     CGRect tableFrame = self.view.bounds;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        tableFrame.size.height -= 20;
+    }else{
+         tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
+    }
+    
+    _webView = [[UIWebView alloc] initWithFrame:tableFrame];
+    [self.view addSubview:_webView];
+    
+    _webView.scalesPageToFit = YES;
+    _webView.backgroundColor = [UIColor whiteColor];
+    _webView.delegate = self;
+}
+
 - (void)loadWithInfo:(GBInfoModel*)info
 {
+    _info = info;
     self.title = info.title;
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSURL *url = [NSURL URLWithString:_info.webUlr];
+    [_webView loadRequest:[NSURLRequest requestWithURL:url]];
+    [self followScrollView:_webView];
 }
 
-- (void)didReceiveMemoryWarning
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return NO;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

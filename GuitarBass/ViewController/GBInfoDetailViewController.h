@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "GBInfoModel.h"
+#import "AMScrollingNavbarViewController.h"
 
-@interface GBInfoDetailViewController : UIViewController
+@interface GBInfoDetailViewController : AMScrollingNavbarViewController<UIWebViewDelegate>
 {
-    
+    UIWebView *_webView;
+    GBInfoModel *_info;
 }
 - (void)loadWithInfo:(GBInfoModel*)info;
 @end

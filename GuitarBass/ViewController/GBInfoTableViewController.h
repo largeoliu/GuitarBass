@@ -12,8 +12,9 @@
 #import "GBSeriesTableViewControllerDelegate.h"
 #import "GBInfoListRequestDelegate.h"
 
-@interface GBInfoTableViewController : UITableViewController<GBSeriesTableViewControllerDelegate,GBInfoListRequestDelegate>
+@interface GBInfoTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, GBSeriesTableViewControllerDelegate,GBInfoListRequestDelegate>
 {
+    UITableView *_tableView;
     __strong GBInfoList *_infoList;
 }
 @end
