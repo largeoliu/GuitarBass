@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "GBSeriesModel.h"
+#import "GBInfoList.h"
 #import "GBSeriesTableViewControllerDelegate.h"
+#import "GBInfoListRequestDelegate.h"
 
-@interface GBInfoTableViewController : UITableViewController<GBSeriesTableViewControllerDelegate>
-
+@interface GBInfoTableViewController : UITableViewController<GBSeriesTableViewControllerDelegate,GBInfoListRequestDelegate>
+{
+    __strong GBInfoList *_infoList;
+}
 @end

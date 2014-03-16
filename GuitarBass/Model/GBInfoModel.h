@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface GBInfoModel : NSObject
-@property (nonatomic, strong) NSString *ulrStr;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *thumbUrl;
+@property (nonatomic, strong) NSString *webUlr;
 @end

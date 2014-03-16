@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "GBSeriesList.h"
 #import "GBSeriesTableViewControllerDelegate.h"
+#import "GBSeriesListRequestDelegate.h"
 
-@interface GBSeriesTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface GBSeriesTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, GBSeriesListRequestDelegate>
 {
     UITableView *_tableView;
     __strong GBSeriesList *_seriesList;

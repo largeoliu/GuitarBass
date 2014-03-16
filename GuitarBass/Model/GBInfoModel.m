@@ -9,5 +9,7 @@
 #import "GBInfoModel.h"
 
 @implementation GBInfoModel
-@synthesize ulrStr = _ulrStr;
+@synthesize title = _title;
+@synthesize thumbUrl = _thumbUrl;
+@synthesize webUlr = _webUlr;
 @end

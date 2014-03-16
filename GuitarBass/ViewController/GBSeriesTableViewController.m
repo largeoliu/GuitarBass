@@ -46,9 +46,9 @@
     _seriesList = seriesList;
 }
 
-- (void)viewDidLoad
+- (void)loadView
 {
-    [super viewDidLoad];
+    [super loadView];
     
     CGRect tableFrame = self.view.bounds;
     tableFrame.origin.y = 20;
@@ -61,14 +61,13 @@
     _tableView.separatorColor = [UIColor blackColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    
-    [self loadData];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidLoad
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidLoad];
+    
+    [self loadData];
 }
 
 #pragma mark - Table view data source
@@ -112,12 +111,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     GBSeriesModel *seriesModel = [_seriesList infoAtIndex:indexPath.row];
     if (_delegate) {
-        [_delegate loadSeries:seriesModel];
+        [_delegate onLoadSeries:seriesModel];
     }
 
     DDMenuController *menuController = [GBAppDelegate defaultAppDelegate].menuController;
     [menuController showRootController:YES];
 }
-
 
 @end

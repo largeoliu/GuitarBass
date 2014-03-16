@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface GBSeriesModel : NSObject
-@property (assign) int uniqueId;
+@property (assign) NSInteger uniqueId;
 @property (nonatomic, strong) NSString *title;
 @end

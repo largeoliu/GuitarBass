@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C531F8B418D54E580043D0D5 /* GBGetSeriesListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8B318D54E580043D0D5 /* GBGetSeriesListRequest.m */; };
+		C531F8CB18D568800043D0D5 /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8C618D568800043D0D5 /* DDMenuController.m */; };
+		C531F8DD18D56A290043D0D5 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8D118D56A290043D0D5 /* EGOCache.m */; };
+		C531F8DE18D56A290043D0D5 /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8D418D56A290043D0D5 /* EGOImageButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C531F8DF18D56A290043D0D5 /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8D718D56A290043D0D5 /* EGOImageLoadConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C531F8E018D56A290043D0D5 /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8D918D56A290043D0D5 /* EGOImageLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C531F8E118D56A290043D0D5 /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8DC18D56A290043D0D5 /* EGOImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C531F8E418D580CF0043D0D5 /* GBInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8E318D580CF0043D0D5 /* GBInfoTableViewCell.m */; };
+		C531F8E718D592A50043D0D5 /* GBInfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8E618D592A50043D0D5 /* GBInfoDetailViewController.m */; };
 		C53AB27318D14BA000BA90E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27218D14BA000BA90E7 /* Foundation.framework */; };
 		C53AB27518D14BA000BA90E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27418D14BA000BA90E7 /* CoreGraphics.framework */; };
 		C53AB27718D14BA000BA90E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27618D14BA000BA90E7 /* UIKit.framework */; };
@@ -14,7 +23,6 @@
 		C53AB27F18D14BA000BA90E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB27E18D14BA000BA90E7 /* main.m */; };
 		C53AB28318D14BA000BA90E7 /* GBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB28218D14BA000BA90E7 /* GBAppDelegate.m */; };
 		C53AB28518D14BA000BA90E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53AB28418D14BA000BA90E7 /* Images.xcassets */; };
-		C53AB2A418D1526B00BA90E7 /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB2A318D1526B00BA90E7 /* DDMenuController.m */; };
 		C53AB2A818D158F000BA90E7 /* GBInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB2A718D158F000BA90E7 /* GBInfoTableViewController.m */; };
 		C53AB2AB18D159B400BA90E7 /* GBSeriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB2AA18D159B400BA90E7 /* GBSeriesTableViewController.m */; };
 		C53AB2AE18D15C8400BA90E7 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C53AB2AD18D15C8400BA90E7 /* nav_menu_icon@2x.png */; };
@@ -25,6 +33,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C531F8B018D549AC0043D0D5 /* GBSeriesListRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBSeriesListRequestDelegate.h; sourceTree = "<group>"; };
+		C531F8B218D54E580043D0D5 /* GBGetSeriesListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBGetSeriesListRequest.h; sourceTree = "<group>"; };
+		C531F8B318D54E580043D0D5 /* GBGetSeriesListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBGetSeriesListRequest.m; sourceTree = "<group>"; };
+		C531F8B618D552CD0043D0D5 /* GBInfoListRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBInfoListRequestDelegate.h; sourceTree = "<group>"; };
+		C531F8C518D568800043D0D5 /* DDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMenuController.h; sourceTree = "<group>"; };
+		C531F8C618D568800043D0D5 /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
+		C531F8D018D56A290043D0D5 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		C531F8D118D56A290043D0D5 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
+		C531F8D318D56A290043D0D5 /* EGOImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageButton.h; sourceTree = "<group>"; };
+		C531F8D418D56A290043D0D5 /* EGOImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageButton.m; sourceTree = "<group>"; };
+		C531F8D618D56A290043D0D5 /* EGOImageLoadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoadConnection.h; sourceTree = "<group>"; };
+		C531F8D718D56A290043D0D5 /* EGOImageLoadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoadConnection.m; sourceTree = "<group>"; };
+		C531F8D818D56A290043D0D5 /* EGOImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoader.h; sourceTree = "<group>"; };
+		C531F8D918D56A290043D0D5 /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
+		C531F8DB18D56A290043D0D5 /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
+		C531F8DC18D56A290043D0D5 /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
+		C531F8E218D580CF0043D0D5 /* GBInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoTableViewCell.h; sourceTree = "<group>"; };
+		C531F8E318D580CF0043D0D5 /* GBInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoTableViewCell.m; sourceTree = "<group>"; };
+		C531F8E518D592A50043D0D5 /* GBInfoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoDetailViewController.h; sourceTree = "<group>"; };
+		C531F8E618D592A50043D0D5 /* GBInfoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoDetailViewController.m; sourceTree = "<group>"; };
 		C53AB26F18D14BA000BA90E7 /* GuitarBass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarBass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53AB27218D14BA000BA90E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C53AB27418D14BA000BA90E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -37,8 +65,6 @@
 		C53AB28218D14BA000BA90E7 /* GBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBAppDelegate.m; sourceTree = "<group>"; };
 		C53AB28418D14BA000BA90E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C53AB28B18D14BA200BA90E7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		C53AB2A218D1526B00BA90E7 /* DDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMenuController.h; sourceTree = "<group>"; };
-		C53AB2A318D1526B00BA90E7 /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
 		C53AB2A618D158F000BA90E7 /* GBInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoTableViewController.h; sourceTree = "<group>"; };
 		C53AB2A718D158F000BA90E7 /* GBInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoTableViewController.m; sourceTree = "<group>"; };
 		C53AB2A918D159B400BA90E7 /* GBSeriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSeriesTableViewController.h; sourceTree = "<group>"; };
@@ -69,6 +95,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C531F8B118D54E1B0043D0D5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				C531F8B218D54E580043D0D5 /* GBGetSeriesListRequest.h */,
+				C531F8B318D54E580043D0D5 /* GBGetSeriesListRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		C531F8B718D568800043D0D5 /* EGOImageLoading */ = {
+			isa = PBXGroup;
+			children = (
+				C531F8CF18D56A290043D0D5 /* EGOCache */,
+				C531F8D218D56A290043D0D5 /* EGOImageButton */,
+				C531F8D518D56A290043D0D5 /* EGOImageLoader */,
+				C531F8DA18D56A290043D0D5 /* EGOImageView */,
+			);
+			name = EGOImageLoading;
+			path = "EGOImageLoading-master";
+			sourceTree = "<group>";
+		};
+		C531F8C418D568800043D0D5 /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C531F8C518D568800043D0D5 /* DDMenuController.h */,
+				C531F8C618D568800043D0D5 /* DDMenuController.m */,
+			);
+			path = SlideMenu;
+			sourceTree = "<group>";
+		};
+		C531F8CF18D56A290043D0D5 /* EGOCache */ = {
+			isa = PBXGroup;
+			children = (
+				C531F8D018D56A290043D0D5 /* EGOCache.h */,
+				C531F8D118D56A290043D0D5 /* EGOCache.m */,
+			);
+			name = EGOCache;
+			path = GuitarBass/thirdParty/EGOImageLoading/EGOCache;
+			sourceTree = SOURCE_ROOT;
+		};
+		C531F8D218D56A290043D0D5 /* EGOImageButton */ = {
+			isa = PBXGroup;
+			children = (
+				C531F8D318D56A290043D0D5 /* EGOImageButton.h */,
+				C531F8D418D56A290043D0D5 /* EGOImageButton.m */,
+			);
+			name = EGOImageButton;
+			path = GuitarBass/thirdParty/EGOImageLoading/EGOImageButton;
+			sourceTree = SOURCE_ROOT;
+		};
+		C531F8D518D56A290043D0D5 /* EGOImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				C531F8D618D56A290043D0D5 /* EGOImageLoadConnection.h */,
+				C531F8D718D56A290043D0D5 /* EGOImageLoadConnection.m */,
+				C531F8D818D56A290043D0D5 /* EGOImageLoader.h */,
+				C531F8D918D56A290043D0D5 /* EGOImageLoader.m */,
+			);
+			name = EGOImageLoader;
+			path = GuitarBass/thirdParty/EGOImageLoading/EGOImageLoader;
+			sourceTree = SOURCE_ROOT;
+		};
+		C531F8DA18D56A290043D0D5 /* EGOImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C531F8DB18D56A290043D0D5 /* EGOImageView.h */,
+				C531F8DC18D56A290043D0D5 /* EGOImageView.m */,
+			);
+			name = EGOImageView;
+			path = GuitarBass/thirdParty/EGOImageLoading/EGOImageView;
+			sourceTree = SOURCE_ROOT;
+		};
 		C53AB26618D14BA000BA90E7 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +203,7 @@
 				C53AB28418D14BA000BA90E7 /* Images.xcassets */,
 				C53AB27918D14BA000BA90E7 /* Supporting Files */,
 				C53AB2B118D1870D00BA90E7 /* Model */,
+				C531F8B118D54E1B0043D0D5 /* Request */,
 				C53AB2A518D158B300BA90E7 /* ViewController */,
 				C56FF8E718D45F4D005F8DB1 /* Interface */,
 				C53AB2A118D1526B00BA90E7 /* thirdParty */,
@@ -127,8 +226,8 @@
 		C53AB2A118D1526B00BA90E7 /* thirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				C53AB2A218D1526B00BA90E7 /* DDMenuController.h */,
-				C53AB2A318D1526B00BA90E7 /* DDMenuController.m */,
+				C531F8B718D568800043D0D5 /* EGOImageLoading */,
+				C531F8C418D568800043D0D5 /* SlideMenu */,
 			);
 			path = thirdParty;
 			sourceTree = "<group>";
@@ -136,10 +235,14 @@
 		C53AB2A518D158B300BA90E7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C531F8E218D580CF0043D0D5 /* GBInfoTableViewCell.h */,
+				C531F8E318D580CF0043D0D5 /* GBInfoTableViewCell.m */,
 				C53AB2A618D158F000BA90E7 /* GBInfoTableViewController.h */,
 				C53AB2A718D158F000BA90E7 /* GBInfoTableViewController.m */,
 				C53AB2A918D159B400BA90E7 /* GBSeriesTableViewController.h */,
 				C53AB2AA18D159B400BA90E7 /* GBSeriesTableViewController.m */,
+				C531F8E518D592A50043D0D5 /* GBInfoDetailViewController.h */,
+				C531F8E618D592A50043D0D5 /* GBInfoDetailViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -171,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				C56FF8E818D45F5E005F8DB1 /* GBSeriesTableViewControllerDelegate.h */,
+				C531F8B018D549AC0043D0D5 /* GBSeriesListRequestDelegate.h */,
+				C531F8B618D552CD0043D0D5 /* GBInfoListRequestDelegate.h */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -245,13 +350,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C531F8CB18D568800043D0D5 /* DDMenuController.m in Sources */,
 				C5AA214818D2A0F5004F5AA4 /* GBInfoList.m in Sources */,
-				C53AB2A418D1526B00BA90E7 /* DDMenuController.m in Sources */,
+				C531F8B418D54E580043D0D5 /* GBGetSeriesListRequest.m in Sources */,
+				C531F8E118D56A290043D0D5 /* EGOImageView.m in Sources */,
 				C5AA214518D2A0E0004F5AA4 /* GBSeriesList.m in Sources */,
+				C531F8DF18D56A290043D0D5 /* EGOImageLoadConnection.m in Sources */,
 				C53AB2B418D189F800BA90E7 /* GBSeriesModel.m in Sources */,
 				C53AB27F18D14BA000BA90E7 /* main.m in Sources */,
+				C531F8E718D592A50043D0D5 /* GBInfoDetailViewController.m in Sources */,
+				C531F8E418D580CF0043D0D5 /* GBInfoTableViewCell.m in Sources */,
 				C53AB2AB18D159B400BA90E7 /* GBSeriesTableViewController.m in Sources */,
+				C531F8E018D56A290043D0D5 /* EGOImageLoader.m in Sources */,
 				C53AB2B718D18A3200BA90E7 /* GBInfoModel.m in Sources */,
+				C531F8DD18D56A290043D0D5 /* EGOCache.m in Sources */,
+				C531F8DE18D56A290043D0D5 /* EGOImageButton.m in Sources */,
 				C53AB2A818D158F000BA90E7 /* GBInfoTableViewController.m in Sources */,
 				C53AB28318D14BA000BA90E7 /* GBAppDelegate.m in Sources */,
 			);
