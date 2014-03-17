@@ -21,6 +21,13 @@
 
 @implementation AMScrollingNavbarViewController
 
+- (void)reset
+{
+    CGRect barFrame = self.navigationController.navigationBar.frame;
+    barFrame.origin.y = 20;
+    self.navigationController.navigationBar.frame = barFrame;
+}
+
 - (void)followScrollView:(UIView*)scrollableView
 {
     if (![self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)])  return;

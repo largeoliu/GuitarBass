@@ -13,6 +13,7 @@
 @interface GBInfoDetailViewController : AMScrollingNavbarViewController<UIWebViewDelegate>
 {
     UIWebView *_webView;
+    NSURLRequest *_urlRequest;
     GBInfoModel *_info;
 }
 - (void)loadWithInfo:(GBInfoModel*)info;

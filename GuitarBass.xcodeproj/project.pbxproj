@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C50E4C5A18D6C23E008EA971 /* GBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C50E4C5818D6C23E008EA971 /* GBWebViewController.m */; };
 		C531F8B418D54E580043D0D5 /* GBGetSeriesListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8B318D54E580043D0D5 /* GBGetSeriesListRequest.m */; };
 		C531F8CB18D568800043D0D5 /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8C618D568800043D0D5 /* DDMenuController.m */; };
 		C531F8DD18D56A290043D0D5 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8D118D56A290043D0D5 /* EGOCache.m */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C50E4C5718D6C23E008EA971 /* GBWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBWebViewController.h; sourceTree = "<group>"; };
+		C50E4C5818D6C23E008EA971 /* GBWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBWebViewController.m; sourceTree = "<group>"; };
 		C531F8B018D549AC0043D0D5 /* GBSeriesListRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBSeriesListRequestDelegate.h; sourceTree = "<group>"; };
 		C531F8B218D54E580043D0D5 /* GBGetSeriesListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBGetSeriesListRequest.h; sourceTree = "<group>"; };
 		C531F8B318D54E580043D0D5 /* GBGetSeriesListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBGetSeriesListRequest.m; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				C53AB2AA18D159B400BA90E7 /* GBSeriesTableViewController.m */,
 				C531F8E518D592A50043D0D5 /* GBInfoDetailViewController.h */,
 				C531F8E618D592A50043D0D5 /* GBInfoDetailViewController.m */,
+				C50E4C5718D6C23E008EA971 /* GBWebViewController.h */,
+				C50E4C5818D6C23E008EA971 /* GBWebViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				C5AA214818D2A0F5004F5AA4 /* GBInfoList.m in Sources */,
 				C531F8B418D54E580043D0D5 /* GBGetSeriesListRequest.m in Sources */,
 				C531F8E118D56A290043D0D5 /* EGOImageView.m in Sources */,
+				C50E4C5A18D6C23E008EA971 /* GBWebViewController.m in Sources */,
 				C5AA214518D2A0E0004F5AA4 /* GBSeriesList.m in Sources */,
 				C531F8DF18D56A290043D0D5 /* EGOImageLoadConnection.m in Sources */,
 				C53AB2B418D189F800BA90E7 /* GBSeriesModel.m in Sources */,

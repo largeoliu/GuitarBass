@@ -22,5 +22,5 @@
  * @param scrollableView The UIView where the scrolling is performed.
  */
 - (void)followScrollView:(UIView*)scrollableView;
-
+- (void)reset;
 @end
