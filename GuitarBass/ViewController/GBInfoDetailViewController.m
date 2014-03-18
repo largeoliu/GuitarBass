@@ -39,6 +39,7 @@
     [self.view addSubview:_webView];
     
     _webView.scalesPageToFit = YES;
+    _webView.multipleTouchEnabled = NO;
     _webView.backgroundColor = [UIColor whiteColor];
     _webView.delegate = self;
     _webView.dataDetectorTypes = UIDataDetectorTypeAll;

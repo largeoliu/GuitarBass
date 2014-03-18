@@ -48,7 +48,10 @@
     [self.view addSubview:toolbar];
     
     UIBarButtonItem *refreshBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:_webView action:@selector(reload)];
-    toolbar.items = [[NSArray alloc] initWithObjects:refreshBtn, nil];
+    UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:_webView action:@selector(goBack)];
+    UIBarButtonItem *forwardBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:_webView action:@selector(goForward)];
+    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    toolbar.items = [[NSArray alloc] initWithObjects:spaceItem, refreshBtn, spaceItem, backBtn, spaceItem,forwardBtn, spaceItem, nil];
 }
 
 - (void)reload
@@ -65,7 +68,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [_webView loadRequest:_urlRequest];
     
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel)];
@@ -74,7 +77,7 @@
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)]) {
         [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     }
-
+    
 }
 
 - (void)cancel
