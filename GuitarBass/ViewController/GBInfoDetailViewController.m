@@ -30,7 +30,7 @@
     
     CGRect tableFrame = self.view.bounds;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        //        tableFrame.size.height -= 20;
+        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height+20;
     }else{
         tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
     }
@@ -69,7 +69,7 @@
         [webViewController loadWithRequest:request];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
         [[GBAppDelegate defaultAppDelegate].menuController presentViewController:navigationController animated:YES completion:nil];
-//                [self reset];
+        [self reset];
         return NO;
     }
     return YES;

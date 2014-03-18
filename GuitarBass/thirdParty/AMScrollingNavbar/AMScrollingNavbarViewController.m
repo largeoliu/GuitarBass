@@ -26,6 +26,7 @@
     CGRect barFrame = self.navigationController.navigationBar.frame;
     barFrame.origin.y = 20;
     self.navigationController.navigationBar.frame = barFrame;
+    [self.overlay setAlpha:0];
 }
 
 - (void)followScrollView:(UIView*)scrollableView

@@ -7,6 +7,8 @@
 //
 
 #import "GBWebViewController.h"
+#define WebToolBarHeight 44
+
 
 @interface GBWebViewController ()
 
@@ -29,7 +31,7 @@
     
     CGRect tableFrame = self.view.bounds;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height+20;
+        tableFrame.size.height -= WebToolBarHeight;
     }else{
         tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
     }
@@ -40,6 +42,18 @@
     _webView.scalesPageToFit = YES;
     _webView.backgroundColor = [UIColor whiteColor];
     _webView.delegate = self;
+    
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_webView.frame), self.view.bounds.size.width, WebToolBarHeight)];
+    toolbar.translucent = YES;
+    [self.view addSubview:toolbar];
+    
+    UIBarButtonItem *refreshBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:_webView action:@selector(reload)];
+    toolbar.items = [[NSArray alloc] initWithObjects:refreshBtn, nil];
+}
+
+- (void)reload
+{
+    [_webView reload];
 }
 
 - (void)loadWithRequest:(NSURLRequest*)request
@@ -56,6 +70,11 @@
     
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel)];
     self.navigationItem.leftBarButtonItem = button;
+    
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)]) {
+        [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    }
+
 }
 
 - (void)cancel
