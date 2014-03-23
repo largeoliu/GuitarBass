@@ -9,6 +9,11 @@
 #import "GBInfoDetailViewController.h"
 #import "GBWebViewController.h"
 #import "GBAppDelegate.h"
+#import "EGOImageView.h"
+#import "ASIWebPageRequest.h"
+#import "ASIDownloadCache.h"
+#import "GBCacheManager.h"
+
 @interface GBInfoDetailViewController ()
 
 @end
@@ -30,9 +35,9 @@
     
     CGRect tableFrame = self.view.bounds;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height+20;
+        tableFrame.size.height -= 20;
     }else{
-        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
+        //tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
     }
     
     _webView = [[UIWebView alloc] initWithFrame:tableFrame];
@@ -43,6 +48,38 @@
     _webView.backgroundColor = [UIColor whiteColor];
     _webView.delegate = self;
     _webView.dataDetectorTypes = UIDataDetectorTypeAll;
+    _webView.scrollView.delegate = self;
+}
+
+- (void)fetchURL:(NSURL *)url
+{
+	[_cacheRequest setDelegate:nil];
+	[_cacheRequest cancel];
+	_cacheRequest = [ASIWebPageRequest requestWithURL:url];
+    [_cacheRequest setDidFailSelector:@selector(webPageFetchFailed:)];
+	[_cacheRequest setDidFinishSelector:@selector(webPageFetchSucceeded:)];
+	[_cacheRequest setDelegate:self];
+	[_cacheRequest setDownloadProgressDelegate:self];
+	[_cacheRequest setUrlReplacementMode:ASIReplaceExternalResourcesWithLocalURLs];
+	[_cacheRequest setCacheStoragePolicy:ASICachePermanentlyCacheStoragePolicy];
+	[_cacheRequest setDownloadCache:[ASIDownloadCache sharedCache]];
+	[_cacheRequest setCachePolicy:ASIOnlyLoadIfNotCachedCachePolicy];
+	[_cacheRequest setDownloadDestinationPath:[[ASIDownloadCache sharedCache] pathToStoreCachedResponseDataForRequest:_cacheRequest]];
+    [[ASIDownloadCache sharedCache] setShouldRespectCacheControlHeaders:NO];
+	[_cacheRequest startAsynchronous];
+}
+
+- (void)webPageFetchFailed:(ASIHTTPRequest *)theRequest
+{
+	
+}
+
+- (void)webPageFetchSucceeded:(ASIHTTPRequest *)theRequest
+{
+    NSURL *baseURL = [NSURL fileURLWithPath:[theRequest downloadDestinationPath]];
+    
+    NSString *response = [NSString stringWithContentsOfFile:[theRequest downloadDestinationPath] encoding:[theRequest responseEncoding] error:nil];
+    [_webView loadHTMLString:response baseURL:baseURL];
 }
 
 - (void)loadWithInfo:(GBInfoModel*)info
@@ -50,22 +87,28 @@
     _info = info;
     self.title = info.title;
     
-    NSURL *url = [NSURL URLWithString:_info.webUlr];
-    _urlRequest = [NSURLRequest requestWithURL:url];
+    _url = [NSURL URLWithString:_info.webUlr];
 }
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [_webView loadRequest:_urlRequest];
+    [self fetchURL:_url];
     [self followScrollView:_webView];
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return nil;
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    if (![request.URL.absoluteString isEqual:_urlRequest.URL.absoluteString]) {
+    NSURL *baseURL = [NSURL fileURLWithPath:[_cacheRequest downloadDestinationPath]];
+    NSString *requstStr = [request.URL.absoluteString hasSuffix:@"/"]?request.URL.absoluteString:[request.URL.absoluteString stringByAppendingString:@"/"];
+    NSString *webStr = [baseURL.absoluteString hasSuffix:@"/"]?baseURL.absoluteString:[baseURL.absoluteString stringByAppendingString:@"/"];
+    
+    if (![requstStr isEqualToString:webStr]) {
         GBWebViewController *webViewController = [[GBWebViewController alloc] init];
         [webViewController loadWithRequest:request];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
@@ -73,6 +116,7 @@
         [self reset];
         return NO;
     }
+    
     return YES;
 }
 

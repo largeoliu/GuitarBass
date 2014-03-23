@@ -68,6 +68,7 @@
         tableFrame.origin.y = 20;
         tableFrame.size.height -= 20;
     }
+    tableFrame.size.width = 200;
     
     
     _tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];

@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "GBInfoModel.h"
 #import "AMScrollingNavbarViewController.h"
-
-@interface GBInfoDetailViewController : AMScrollingNavbarViewController<UIWebViewDelegate>
+@class ASIWebPageRequest;
+@interface GBInfoDetailViewController : AMScrollingNavbarViewController<UIWebViewDelegate, UIScrollViewDelegate>
 {
     UIWebView *_webView;
-    NSURLRequest *_urlRequest;
+    NSURL *_url;
     GBInfoModel *_info;
+    ASIWebPageRequest *_cacheRequest;
 }
 - (void)loadWithInfo:(GBInfoModel*)info;
 @end
