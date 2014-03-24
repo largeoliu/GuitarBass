@@ -56,10 +56,9 @@
 	[_cacheRequest setDelegate:nil];
 	[_cacheRequest cancel];
 	_cacheRequest = [ASIWebPageRequest requestWithURL:url];
+    [_cacheRequest setDelegate:self];
     [_cacheRequest setDidFailSelector:@selector(webPageFetchFailed:)];
 	[_cacheRequest setDidFinishSelector:@selector(webPageFetchSucceeded:)];
-	[_cacheRequest setDelegate:self];
-	[_cacheRequest setDownloadProgressDelegate:self];
 	[_cacheRequest setUrlReplacementMode:ASIReplaceExternalResourcesWithLocalURLs];
 	[_cacheRequest setCacheStoragePolicy:ASICachePermanentlyCacheStoragePolicy];
 	[_cacheRequest setDownloadCache:[ASIDownloadCache sharedCache]];
@@ -120,5 +119,10 @@
     return YES;
 }
 
+- (void)dealloc
+{
+    [_cacheRequest clearDelegatesAndCancel];
+	[_cacheRequest cancel];
+}
 
 @end
