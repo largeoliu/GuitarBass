@@ -6,10 +6,8 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "EGOImageView.h"
-#import "GBInfoModel.h"
-
+@class EGOImageView;
+@class GBInfoModel;
 @interface GBInfoTableViewCell : UITableViewCell
 {
     EGOImageView *_thumbImageView;

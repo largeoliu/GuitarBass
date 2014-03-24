@@ -6,8 +6,6 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface GBSeriesModel : NSObject
 @property (assign) NSInteger uniqueId;
 @property (nonatomic, strong) NSString *title;

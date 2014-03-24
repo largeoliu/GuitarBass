@@ -6,8 +6,12 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+@class GBInfoList;
 @interface GBInfoContentViewController : UIViewController
-
+{
+    UIScrollView *_scrollView;
+    GBInfoList *_infoList;
+    NSUInteger _currentIndex;
+}
+- (void)loadWithInfoList:(GBInfoList*)infoList forIndex:(NSUInteger)index;
 @end

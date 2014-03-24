@@ -6,11 +6,10 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "GBSeriesList.h"
 #import "GBSeriesTableViewControllerDelegate.h"
 #import "GBSeriesListRequestDelegate.h"
-
+@class GBSeriesList;
+@protocol GBSeriesListRequestDelegate;
 @interface GBSeriesTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, GBSeriesListRequestDelegate>
 {
     UITableView *_tableView;

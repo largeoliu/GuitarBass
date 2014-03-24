@@ -7,43 +7,42 @@
 //
 
 #import "GBInfoContentViewController.h"
-
+#import "GBInfoList.h"
+#import "GBInfoDetailView.h"
 @interface GBInfoContentViewController ()
 
 @end
 
 @implementation GBInfoContentViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
+}
+
+- (void)loadWithInfoList:(GBInfoList*)infoList forIndex:(NSUInteger)index
+{
+    _infoList = infoList;
+    _currentIndex = index;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*_infoList.count, self.view.bounds.size.height);
+    [self.view addSubview:_scrollView];
+    
+    _scrollView.contentOffset = CGPointMake(self.view.bounds.size.width*_currentIndex, 0);
+    GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectOffset(_scrollView.bounds, _scrollView.contentOffset.x, 0)];
+    [_scrollView addSubview:idv];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

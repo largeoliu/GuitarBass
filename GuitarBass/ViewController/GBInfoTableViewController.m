@@ -9,6 +9,9 @@
 #import "GBInfoTableViewController.h"
 #import "GBInfoTableViewCell.h"
 #import "GBInfoDetailViewController.h"
+#import "GBSeriesModel.h"
+#import "GBInfoList.h"
+#import "GBInfoContentViewController.h"
 
 @interface GBInfoTableViewController ()
 
@@ -150,9 +153,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    GBInfoModel *infoModel = [_infoList infoAtIndex:indexPath.row];
-    GBInfoDetailViewController *odvc = [[GBInfoDetailViewController alloc] init];
-    [odvc loadWithInfo:infoModel];
+    GBInfoContentViewController *odvc = [[GBInfoContentViewController alloc] init];
+    [odvc loadWithInfoList:_infoList forIndex:indexPath.row];
     [self.navigationController pushViewController:odvc animated:YES];
 }
 

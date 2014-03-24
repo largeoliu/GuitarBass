@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-
+#import "GBSeriesModel.h"
 @protocol GBSeriesTableViewControllerDelegate <NSObject>
 - (void)onLoadSeries:(GBSeriesModel*)seriesModel;
 @end

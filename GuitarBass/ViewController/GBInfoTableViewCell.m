@@ -7,6 +7,8 @@
 //
 
 #import "GBInfoTableViewCell.h"
+#import "EGOImageView.h"
+#import "GBInfoModel.h"
 #define InfoCellHeight 85.0f
 #define InfoTitleWidth 230.0f
 

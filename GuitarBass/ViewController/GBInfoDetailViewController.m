@@ -9,6 +9,7 @@
 #import "GBInfoDetailViewController.h"
 #import "GBWebViewController.h"
 #import "GBAppDelegate.h"
+#import "GBInfoModel.h"
 #import "EGOImageView.h"
 #import "ASIWebPageRequest.h"
 #import "ASIDownloadCache.h"
@@ -111,7 +112,7 @@
         GBWebViewController *webViewController = [[GBWebViewController alloc] init];
         [webViewController loadWithRequest:request];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
-        [[GBAppDelegate defaultAppDelegate].menuController presentViewController:navigationController animated:YES completion:nil];
+        [[GBAppDelegate defaultAppDelegate] presentViewController:navigationController];
         [self reset];
         return NO;
     }

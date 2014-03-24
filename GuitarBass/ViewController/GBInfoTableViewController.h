@@ -6,12 +6,9 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "GBSeriesModel.h"
-#import "GBInfoList.h"
 #import "GBSeriesTableViewControllerDelegate.h"
 #import "GBInfoListRequestDelegate.h"
-
+@class GBInfoList;
 @interface GBInfoTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, GBSeriesTableViewControllerDelegate,GBInfoListRequestDelegate>
 {
     UITableView *_tableView;

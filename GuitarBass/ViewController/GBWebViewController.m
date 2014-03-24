@@ -9,7 +9,6 @@
 #import "GBWebViewController.h"
 #define WebToolBarHeight 44
 
-
 @interface GBWebViewController ()
 
 @end

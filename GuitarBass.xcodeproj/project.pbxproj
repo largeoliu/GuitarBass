@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C50E4C5A18D6C23E008EA971 /* GBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C50E4C5818D6C23E008EA971 /* GBWebViewController.m */; };
+		C5118A0C18E092CE00A38D35 /* GBInfoDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5118A0B18E092CE00A38D35 /* GBInfoDetailView.m */; };
 		C531F8B418D54E580043D0D5 /* GBGetSeriesListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8B318D54E580043D0D5 /* GBGetSeriesListRequest.m */; };
 		C531F8CB18D568800043D0D5 /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8C618D568800043D0D5 /* DDMenuController.m */; };
 		C531F8DD18D56A290043D0D5 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8D118D56A290043D0D5 /* EGOCache.m */; };
@@ -21,7 +22,6 @@
 		C53AB27318D14BA000BA90E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27218D14BA000BA90E7 /* Foundation.framework */; };
 		C53AB27518D14BA000BA90E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27418D14BA000BA90E7 /* CoreGraphics.framework */; };
 		C53AB27718D14BA000BA90E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27618D14BA000BA90E7 /* UIKit.framework */; };
-		C53AB27D18D14BA000BA90E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C53AB27B18D14BA000BA90E7 /* InfoPlist.strings */; };
 		C53AB27F18D14BA000BA90E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB27E18D14BA000BA90E7 /* main.m */; };
 		C53AB28318D14BA000BA90E7 /* GBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB28218D14BA000BA90E7 /* GBAppDelegate.m */; };
 		C53AB28518D14BA000BA90E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53AB28418D14BA000BA90E7 /* Images.xcassets */; };
@@ -55,6 +55,8 @@
 /* Begin PBXFileReference section */
 		C50E4C5718D6C23E008EA971 /* GBWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBWebViewController.h; sourceTree = "<group>"; };
 		C50E4C5818D6C23E008EA971 /* GBWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBWebViewController.m; sourceTree = "<group>"; };
+		C5118A0A18E092CE00A38D35 /* GBInfoDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoDetailView.h; sourceTree = "<group>"; };
+		C5118A0B18E092CE00A38D35 /* GBInfoDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoDetailView.m; sourceTree = "<group>"; };
 		C531F8B018D549AC0043D0D5 /* GBSeriesListRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBSeriesListRequestDelegate.h; sourceTree = "<group>"; };
 		C531F8B218D54E580043D0D5 /* GBGetSeriesListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBGetSeriesListRequest.h; sourceTree = "<group>"; };
 		C531F8B318D54E580043D0D5 /* GBGetSeriesListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBGetSeriesListRequest.m; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 		C53AB27418D14BA000BA90E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C53AB27618D14BA000BA90E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C53AB27A18D14BA000BA90E7 /* GuitarBass-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GuitarBass-Info.plist"; sourceTree = "<group>"; };
-		C53AB27C18D14BA000BA90E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C53AB27E18D14BA000BA90E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C53AB28018D14BA000BA90E7 /* GuitarBass-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GuitarBass-Prefix.pch"; sourceTree = "<group>"; };
 		C53AB28118D14BA000BA90E7 /* GBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBAppDelegate.h; sourceTree = "<group>"; };
@@ -294,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				C53AB27A18D14BA000BA90E7 /* GuitarBass-Info.plist */,
-				C53AB27B18D14BA000BA90E7 /* InfoPlist.strings */,
 				C53AB27E18D14BA000BA90E7 /* main.m */,
 				C53AB28018D14BA000BA90E7 /* GuitarBass-Prefix.pch */,
 			);
@@ -328,6 +328,8 @@
 				C50E4C5818D6C23E008EA971 /* GBWebViewController.m */,
 				C544070A18E0023F007283A0 /* GBInfoContentViewController.h */,
 				C544070B18E0023F007283A0 /* GBInfoContentViewController.m */,
+				C5118A0A18E092CE00A38D35 /* GBInfoDetailView.h */,
+				C5118A0B18E092CE00A38D35 /* GBInfoDetailView.m */,
 				C5C230A918D8B5B5007FF365 /* Test.xib */,
 			);
 			path = ViewController;
@@ -480,7 +482,6 @@
 			files = (
 				C53AB2AE18D15C8400BA90E7 /* nav_menu_icon@2x.png in Resources */,
 				C5C230AA18D8B5B5007FF365 /* Test.xib in Resources */,
-				C53AB27D18D14BA000BA90E7 /* InfoPlist.strings in Resources */,
 				C53AB28518D14BA000BA90E7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +509,7 @@
 				C53AB2AB18D159B400BA90E7 /* GBSeriesTableViewController.m in Sources */,
 				C531F8E018D56A290043D0D5 /* EGOImageLoader.m in Sources */,
 				C5977D7418DD967100B36B97 /* ASIInputStream.m in Sources */,
+				C5118A0C18E092CE00A38D35 /* GBInfoDetailView.m in Sources */,
 				C53AB2B718D18A3200BA90E7 /* GBInfoModel.m in Sources */,
 				C531F8DD18D56A290043D0D5 /* EGOCache.m in Sources */,
 				C531F8DE18D56A290043D0D5 /* EGOImageButton.m in Sources */,
@@ -527,17 +529,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C53AB27B18D14BA000BA90E7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C53AB27C18D14BA000BA90E7 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C53AB29918D14BA300BA90E7 /* Debug */ = {

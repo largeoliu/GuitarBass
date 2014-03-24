@@ -9,6 +9,7 @@
 #import "GBAppDelegate.h"
 #import "GBInfoTableViewController.h"
 #import "GBSeriesTableViewController.h"
+#import "DDMenuController.h"
 
 @implementation GBAppDelegate
 
@@ -45,6 +46,16 @@ static id currentAppDelegate = nil;
     return YES;
 
     return YES;
+}
+
+- (void)presentViewController:(UIViewController *)viewControllerToPresent
+{
+    [_menuController presentViewController:viewControllerToPresent animated:YES completion:nil];
+}
+
+- (void)showRootController
+{
+    [_menuController showRootController:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

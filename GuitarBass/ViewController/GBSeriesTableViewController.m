@@ -8,6 +8,7 @@
 
 #import "GBSeriesTableViewController.h"
 #import "GBAppDelegate.h"
+#import "GBSeriesList.h"
 
 @interface GBSeriesTableViewController ()
 
@@ -133,9 +134,7 @@
     if (_delegate) {
         [_delegate onLoadSeries:seriesModel];
     }
-    
-    DDMenuController *menuController = [GBAppDelegate defaultAppDelegate].menuController;
-    [menuController showRootController:YES];
+    [[GBAppDelegate defaultAppDelegate] showRootController];
 }
 
 @end

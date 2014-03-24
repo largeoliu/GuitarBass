@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "GBInfoModel.h"
 #import "AMScrollingNavbarViewController.h"
+@class GBInfoModel;
 @class ASIWebPageRequest;
+@class AMScrollingNavbarViewController;
 @interface GBInfoDetailViewController : AMScrollingNavbarViewController<UIWebViewDelegate, UIScrollViewDelegate>
 {
     UIWebView *_webView;

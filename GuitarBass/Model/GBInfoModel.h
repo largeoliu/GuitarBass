@@ -6,8 +6,6 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface GBInfoModel : NSObject
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *thumbUrl;
