@@ -7,7 +7,7 @@
 //
 
 @class GBInfoList;
-@interface GBInfoContentViewController : UIViewController
+@interface GBInfoContentViewController : UIViewController<UIScrollViewDelegate>
 {
     UIScrollView *_scrollView;
     GBInfoList *_infoList;
