@@ -11,7 +11,7 @@
 {
     UIScrollView *_scrollView;
     GBInfoList *_infoList;
-    NSUInteger _currentIndex;
+    NSInteger _currentIndex;
 }
-- (void)loadWithInfoList:(GBInfoList*)infoList forIndex:(NSUInteger)index;
+- (void)loadWithInfoList:(GBInfoList*)infoList forIndex:(NSInteger)index;
 @end

@@ -9,6 +9,7 @@
 #import "GBInfoContentViewController.h"
 #import "GBInfoList.h"
 #import "GBInfoDetailView.h"
+#define TAG_START 100
 @interface GBInfoContentViewController ()
 
 @end
@@ -24,7 +25,7 @@
     return self;
 }
 
-- (void)loadWithInfoList:(GBInfoList*)infoList forIndex:(NSUInteger)index
+- (void)loadWithInfoList:(GBInfoList*)infoList forIndex:(NSInteger)index
 {
     _infoList = infoList;
     _currentIndex = index;
@@ -43,16 +44,19 @@
     _scrollView.showsHorizontalScrollIndicator = YES;
     [self.view addSubview:_scrollView];
     
-    GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectOffset(_scrollView.bounds, _scrollView.bounds.size.width*_currentIndex, 0)];
-    idv.tag = 100+_currentIndex;
-    [_scrollView addSubview:idv];
-    [_scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*_currentIndex, 0) animated:NO];
-    NSLog(@"%f", idv.frame.origin.x);
     [self pageChanged];
+    [_scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*_currentIndex, 0) animated:NO];
 }
 
 - (void)pageChanged
 {
+    for (int i = _currentIndex-1; i <= _currentIndex+1; i++) {
+        if (i >= 0 && i < _infoList.count&&![_scrollView viewWithTag:(TAG_START+i)]) {
+            GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectOffset(self.view.bounds, self.view.bounds.size.width*i, 0)];
+            idv.tag = (TAG_START+i);
+            [_scrollView addSubview:idv];
+        }
+    }
     self.title = [_infoList infoAtIndex:_currentIndex].title;
 }
 
@@ -61,10 +65,11 @@
     NSUInteger lastIndex = _currentIndex;
     _currentIndex = scrollView.contentOffset.x/_scrollView.bounds.size.width;
     if (lastIndex != _currentIndex) {
-        [[_scrollView viewWithTag:100+lastIndex] removeFromSuperview];
-        GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectOffset(self.view.bounds, _scrollView.bounds.size.width*_currentIndex, 0)];
-        idv.tag = 100+_currentIndex;
-        [_scrollView addSubview:idv];
+        if (_currentIndex>lastIndex) {
+            [[_scrollView viewWithTag:(TAG_START+lastIndex-1)] removeFromSuperview];
+        }else{
+            [[_scrollView viewWithTag:(TAG_START+lastIndex+1)] removeFromSuperview];
+        }
         [self pageChanged];
     }
 }
