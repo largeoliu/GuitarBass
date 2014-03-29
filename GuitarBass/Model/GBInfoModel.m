@@ -7,9 +7,17 @@
 //
 
 #import "GBInfoModel.h"
-
+#import "GDataXMLNode.h"
 @implementation GBInfoModel
 @synthesize title = _title;
 @synthesize thumbUrl = _thumbUrl;
 @synthesize webUlr = _webUlr;
+- (id)init:(GDataXMLElement*)xmlElement
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
 @end

@@ -8,12 +8,14 @@
 
 #import "GBSeriesTableViewControllerDelegate.h"
 #import "GBSeriesListRequestDelegate.h"
+#import "GBGetSeriesListRequest.h"
 @class GBSeriesList;
 @protocol GBSeriesListRequestDelegate;
 @interface GBSeriesTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, GBSeriesListRequestDelegate>
 {
     UITableView *_tableView;
-    __strong GBSeriesList *_seriesList;
+    GBSeriesList *_seriesList;
+    GBGetSeriesListRequest *_listRequest;
 }
 @property (weak) id<GBSeriesTableViewControllerDelegate> delegate;
 @end

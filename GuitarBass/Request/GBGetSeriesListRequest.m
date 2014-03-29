@@ -7,7 +7,16 @@
 //
 
 #import "GBGetSeriesListRequest.h"
-
+#import "GBSeriesListRequestDelegate.h"
+#import "GBSeriesList.h"
 @implementation GBGetSeriesListRequest
-
+@synthesize delegate = _delegate;
+- (NSString*)url
+{
+    return @"atom";
+}
+- (void)doElement:(GDataXMLElement*)xml
+{
+    [_delegate onReceiveSeriesListSucceed:[[GBSeriesList alloc] init:xml]];
+}
 @end

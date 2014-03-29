@@ -28,30 +28,9 @@
 
 - (void)loadData
 {
-    GBSeriesList *seriesList = [[GBSeriesList alloc] init];
-    
-    GBSeriesModel *sm1 = [[GBSeriesModel alloc] init];
-    sm1.title = @"2014年第一期";
-    [seriesList addInfo:sm1];
-    
-    GBSeriesModel *sm2 = [[GBSeriesModel alloc] init];
-    sm2.title = @"2014年第二期";
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    [seriesList addInfo:sm2];
-    
-    
-    [self onReceiveSeriesListSucceed:seriesList];
+    _listRequest = [[GBGetSeriesListRequest alloc] init];
+    _listRequest.delegate = self;
+    [_listRequest start];
 }
 
 - (void)onReceiveSeriesListSucceed:(GBSeriesList*)seriesList

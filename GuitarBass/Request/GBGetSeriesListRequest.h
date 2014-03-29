@@ -6,6 +6,8 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-@interface GBGetSeriesListRequest : NSObject
-
+#import "GBRequest.h"
+@protocol GBSeriesListRequestDelegate;
+@interface GBGetSeriesListRequest : GBRequest
+@property (weak) id<GBSeriesListRequestDelegate> delegate;
 @end

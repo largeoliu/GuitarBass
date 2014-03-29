@@ -61,13 +61,13 @@
     GBInfoModel *info1 = [[GBInfoModel alloc] init];
     info1.title = @"【Livehouse终极攻略】武汉 VOX Livehouse";
     info1.thumbUrl = @"http://musicianguide.cn/wp-content/uploads/2014/01/MG_2955.jpg";
-    info1.webUlr = @"http://guitarbass.sinaapp.com/app/article?aid=1";
+    info1.webUlr = @"http://guitarbass.sinaapp.com/app/1/1";
     [infoList addInfo:info1];
     
     GBInfoModel *info2 = [[GBInfoModel alloc] init];
     info2.title = @"音乐人的另一个舞台：名片音乐人的另一个舞台：名片音乐人的另一个舞台：名片音乐人的另一个舞台：名片";
     info2.thumbUrl = @"http://musicianguide.cn/wp-content/uploads/2014/01/bart-business-card1.jpg";
-    info2.webUlr = @"http://guitarbass.sinaapp.com/app/article?aid=2";
+    info2.webUlr = @"http://guitarbass.sinaapp.com/app/1/2";
     [infoList addInfo:info2];
     [infoList addInfo:info2];
     [infoList addInfo:info2];

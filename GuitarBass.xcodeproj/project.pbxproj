@@ -50,6 +50,9 @@
 		C5AA214518D2A0E0004F5AA4 /* GBSeriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA214418D2A0E0004F5AA4 /* GBSeriesList.m */; };
 		C5AA214818D2A0F5004F5AA4 /* GBInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA214718D2A0F5004F5AA4 /* GBInfoList.m */; };
 		C5C230AA18D8B5B5007FF365 /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5C230A918D8B5B5007FF365 /* Test.xib */; };
+		C5EB942518E6BC540091E90C /* GBGetInfoListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB942418E6BC540091E90C /* GBGetInfoListRequest.m */; };
+		C5EB942818E6C3550091E90C /* GBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB942718E6C3550091E90C /* GBRequest.m */; };
+		C5EB942F18E722AF0091E90C /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB942E18E722AF0091E90C /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +141,12 @@
 		C5AA214618D2A0F5004F5AA4 /* GBInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoList.h; sourceTree = "<group>"; };
 		C5AA214718D2A0F5004F5AA4 /* GBInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoList.m; sourceTree = "<group>"; };
 		C5C230A918D8B5B5007FF365 /* Test.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
+		C5EB942318E6BC540091E90C /* GBGetInfoListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBGetInfoListRequest.h; sourceTree = "<group>"; };
+		C5EB942418E6BC540091E90C /* GBGetInfoListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBGetInfoListRequest.m; sourceTree = "<group>"; };
+		C5EB942618E6C3550091E90C /* GBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRequest.h; sourceTree = "<group>"; };
+		C5EB942718E6C3550091E90C /* GBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBRequest.m; sourceTree = "<group>"; };
+		C5EB942D18E722AF0091E90C /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		C5EB942E18E722AF0091E90C /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +173,10 @@
 			children = (
 				C531F8B218D54E580043D0D5 /* GBGetSeriesListRequest.h */,
 				C531F8B318D54E580043D0D5 /* GBGetSeriesListRequest.m */,
+				C5EB942318E6BC540091E90C /* GBGetInfoListRequest.h */,
+				C5EB942418E6BC540091E90C /* GBGetInfoListRequest.m */,
+				C5EB942618E6C3550091E90C /* GBRequest.h */,
+				C5EB942718E6C3550091E90C /* GBRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -304,6 +317,7 @@
 		C53AB2A118D1526B00BA90E7 /* thirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C5EB942C18E722AF0091E90C /* XMLSupport */,
 				C5977D8418DD971D00B36B97 /* Reachability */,
 				C5977D3918DD967100B36B97 /* ASIHttp */,
 				C531F8E818D5AA4D0043D0D5 /* AMScrollingNavbar */,
@@ -423,6 +437,15 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		C5EB942C18E722AF0091E90C /* XMLSupport */ = {
+			isa = PBXGroup;
+			children = (
+				C5EB942D18E722AF0091E90C /* GDataXMLNode.h */,
+				C5EB942E18E722AF0091E90C /* GDataXMLNode.m */,
+			);
+			path = XMLSupport;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -502,6 +525,7 @@
 				C5AA214518D2A0E0004F5AA4 /* GBSeriesList.m in Sources */,
 				C531F8DF18D56A290043D0D5 /* EGOImageLoadConnection.m in Sources */,
 				C53AB2B418D189F800BA90E7 /* GBSeriesModel.m in Sources */,
+				C5EB942518E6BC540091E90C /* GBGetInfoListRequest.m in Sources */,
 				C53AB27F18D14BA000BA90E7 /* main.m in Sources */,
 				C5977D6F18DD967100B36B97 /* ASIDataCompressor.m in Sources */,
 				C531F8E718D592A50043D0D5 /* GBInfoDetailViewController.m in Sources */,
@@ -514,8 +538,10 @@
 				C531F8DD18D56A290043D0D5 /* EGOCache.m in Sources */,
 				C531F8DE18D56A290043D0D5 /* EGOImageButton.m in Sources */,
 				C5977D7318DD967100B36B97 /* ASIHTTPRequest.m in Sources */,
+				C5EB942F18E722AF0091E90C /* GDataXMLNode.m in Sources */,
 				C5977D7118DD967100B36B97 /* ASIDownloadCache.m in Sources */,
 				C53AB2A818D158F000BA90E7 /* GBInfoTableViewController.m in Sources */,
+				C5EB942818E6C3550091E90C /* GBRequest.m in Sources */,
 				C5977D7218DD967100B36B97 /* ASIFormDataRequest.m in Sources */,
 				C5977D7618DD967100B36B97 /* ASIWebPageRequest.m in Sources */,
 				C5977D8718DD971D00B36B97 /* Reachability.m in Sources */,

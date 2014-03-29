@@ -7,7 +7,8 @@
 //
 
 #import "GBSeriesList.h"
-
+#import "GBSeriesModel.h"
+#import "GDataXMLNode.h"
 @implementation GBSeriesList
 - (id)init
 {
@@ -16,6 +17,24 @@
         _array = [NSMutableArray array];
     }
     return self;
+}
+
+- (id)init:(GDataXMLElement*)xmlElement
+{
+    self = [super init];
+    if (self) {
+        _array = [NSMutableArray array];
+        NSArray *array = [xmlElement children];
+        for (int i = 0; i < [array count]; i++) {
+            GDataXMLElement *ele = [array objectAtIndex:i];
+            if ([[ele name] isEqualToString:@"entry"]) {
+                GBSeriesModel *series = [[GBSeriesModel alloc] init:ele];
+                [_array addObject:series];
+            }
+        }
+    }
+    return self;
+    
 }
 
 - (void)addInfo:(GBSeriesModel*)info
