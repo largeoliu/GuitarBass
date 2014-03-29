@@ -6,8 +6,9 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
+#import "AMScrollingNavbarViewController.h"
 @class GBInfoList;
-@interface GBInfoContentViewController : UIViewController<UIScrollViewDelegate>
+@interface GBInfoContentViewController : AMScrollingNavbarViewController<UIScrollViewDelegate>
 {
     UIScrollView *_scrollView;
     GBInfoList *_infoList;

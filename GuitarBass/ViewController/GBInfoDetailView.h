@@ -6,8 +6,14 @@
 //  Copyright (c) 2014 tinmanarts. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface GBInfoDetailView : UIView
-
+@class GBInfoModel;
+@class ASIWebPageRequest;
+@interface GBInfoDetailView : UIView<UIWebViewDelegate>
+{
+    UIWebView *_webView;
+    NSURL *_url;
+    GBInfoModel *_info;
+    ASIWebPageRequest *_cacheRequest;
+}
+- (void)loadWithInfo:(GBInfoModel*)info;
 @end

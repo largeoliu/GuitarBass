@@ -35,24 +35,32 @@
 {
     [super viewDidLoad];
     CGRect tableFrame = self.view.bounds;
-    tableFrame.size.height = 200;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height+20;
+    }else{
+        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
+    }
     _scrollView = [[UIScrollView alloc] initWithFrame:tableFrame];
-    _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*_infoList.count, self.view.bounds.size.height);
+    _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*_infoList.count, tableFrame.size.height);
     _scrollView.delegate = self;
     _scrollView.pagingEnabled = YES;
-    _scrollView.backgroundColor = [UIColor greenColor];
+    _scrollView.bounces = NO;
     _scrollView.showsHorizontalScrollIndicator = YES;
+    _scrollView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_scrollView];
     
     [self pageChanged];
     [_scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*_currentIndex, 0) animated:NO];
+    
+    //[self followScrollView:_scrollView];
 }
 
 - (void)pageChanged
 {
     for (int i = _currentIndex-1; i <= _currentIndex+1; i++) {
         if (i >= 0 && i < _infoList.count&&![_scrollView viewWithTag:(TAG_START+i)]) {
-            GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectOffset(self.view.bounds, self.view.bounds.size.width*i, 0)];
+            GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*i, 0, _scrollView.bounds.size.width, _scrollView.bounds.size.height)];
+            [idv loadWithInfo:[_infoList infoAtIndex:i]];
             idv.tag = (TAG_START+i);
             [_scrollView addSubview:idv];
         }

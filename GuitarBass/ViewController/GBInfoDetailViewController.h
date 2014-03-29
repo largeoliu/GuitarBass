@@ -9,7 +9,6 @@
 #import "AMScrollingNavbarViewController.h"
 @class GBInfoModel;
 @class ASIWebPageRequest;
-@class AMScrollingNavbarViewController;
 @interface GBInfoDetailViewController : AMScrollingNavbarViewController<UIWebViewDelegate, UIScrollViewDelegate>
 {
     UIWebView *_webView;
