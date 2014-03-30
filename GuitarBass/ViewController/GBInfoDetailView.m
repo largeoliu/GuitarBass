@@ -83,6 +83,9 @@
     NSURL *baseURL = [NSURL fileURLWithPath:[_cacheRequest downloadDestinationPath]];
     NSString *requstStr = [request.URL.absoluteString hasSuffix:@"/"]?request.URL.absoluteString:[request.URL.absoluteString stringByAppendingString:@"/"];
     NSString *webStr = [baseURL.absoluteString hasSuffix:@"/"]?baseURL.absoluteString:[baseURL.absoluteString stringByAppendingString:@"/"];
+    if ([webStr hasPrefix:@"file://localhost"]) {
+        webStr = [webStr stringByReplacingOccurrencesOfString:@"file://localhost" withString:@"file://"];
+    }
     
     if (![requstStr isEqualToString:webStr]) {
         GBWebViewController *webViewController = [[GBWebViewController alloc] init];

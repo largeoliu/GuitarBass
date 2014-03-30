@@ -32,7 +32,7 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
         tableFrame.size.height -= WebToolBarHeight;
     }else{
-        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
+        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height+WebToolBarHeight;
     }
     
     _webView = [[UIWebView alloc] initWithFrame:tableFrame];
@@ -44,7 +44,11 @@
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, _webView.frame.origin.y+_webView.frame.size.height, self.view.bounds.size.width, WebToolBarHeight)];
     toolbar.layer.anchorPoint = CGPointMake(0, 1);
-    toolbar.layer.position = CGPointMake(0, self.view.bounds.size.height);
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        toolbar.layer.position = CGPointMake(0, self.view.bounds.size.height);
+    }else{
+        toolbar.layer.position = CGPointMake(0, self.view.bounds.size.height-WebToolBarHeight);
+    }
     toolbar.translucent = YES;
     [self.view addSubview:toolbar];
     

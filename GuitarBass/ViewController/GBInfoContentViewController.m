@@ -40,7 +40,7 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
 
     }else{
-        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
+        
     }
     _scrollView = [[UIScrollView alloc] initWithFrame:tableFrame];
     _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*_infoList.count, tableFrame.size.height-20);
@@ -69,9 +69,13 @@
 
 - (void)pageChanged
 {
+    CGFloat offset = 0;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        offset = 20;
+    }
     for (int i = _currentIndex-1; i <= _currentIndex+1; i++) {
         if (i >= 0 && i < _infoList.count&&![_scrollView viewWithTag:(TAG_START+i)]) {
-            GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*i, 0, _scrollView.bounds.size.width, _scrollView.bounds.size.height-20)];
+            GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*i, 0, _scrollView.bounds.size.width, _scrollView.bounds.size.height-offset)];
             [idv loadWithInfo:[_infoList infoAtIndex:i]];
             idv.tag = (TAG_START+i);
             [_scrollView addSubview:idv];
