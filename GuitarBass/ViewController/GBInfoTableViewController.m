@@ -8,7 +8,6 @@
 
 #import "GBInfoTableViewController.h"
 #import "GBInfoTableViewCell.h"
-#import "GBInfoDetailViewController.h"
 #import "GBSeriesModel.h"
 #import "GBInfoList.h"
 #import "GBInfoContentViewController.h"
@@ -55,28 +54,9 @@
 
 - (void)loadData
 {
-    
-    GBInfoList *infoList = [[GBInfoList alloc] init];
-    
-    GBInfoModel *info1 = [[GBInfoModel alloc] init];
-    info1.title = @"【Livehouse终极攻略】武汉 VOX Livehouse";
-    info1.thumbUrl = @"http://musicianguide.cn/wp-content/uploads/2014/01/MG_2955.jpg";
-    info1.webUlr = @"http://guitarbass.sinaapp.com/app/1/1";
-    [infoList addInfo:info1];
-    
-    GBInfoModel *info2 = [[GBInfoModel alloc] init];
-    info2.title = @"音乐人的另一个舞台：名片音乐人的另一个舞台：名片音乐人的另一个舞台：名片音乐人的另一个舞台：名片";
-    info2.thumbUrl = @"http://musicianguide.cn/wp-content/uploads/2014/01/bart-business-card1.jpg";
-    info2.webUlr = @"http://guitarbass.sinaapp.com/app/1/2";
-    [infoList addInfo:info2];
-    [infoList addInfo:info2];
-    [infoList addInfo:info2];
-    [infoList addInfo:info2];
-    [infoList addInfo:info2];
-    [infoList addInfo:info2];
-    
-    [self onReceiveInfoListSucceed:infoList];
-}
+    _listRequest = [[GBGetInfoListRequest alloc] init];
+    _listRequest.delegate = self;
+    [_listRequest start];}
 
 - (void)onReceiveInfoListSucceed:(GBInfoList*)infoList
 {

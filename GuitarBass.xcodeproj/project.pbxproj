@@ -17,7 +17,6 @@
 		C531F8E018D56A290043D0D5 /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8D918D56A290043D0D5 /* EGOImageLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C531F8E118D56A290043D0D5 /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8DC18D56A290043D0D5 /* EGOImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C531F8E418D580CF0043D0D5 /* GBInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8E318D580CF0043D0D5 /* GBInfoTableViewCell.m */; };
-		C531F8E718D592A50043D0D5 /* GBInfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8E618D592A50043D0D5 /* GBInfoDetailViewController.m */; };
 		C531F8EB18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C531F8EA18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m */; };
 		C53AB27318D14BA000BA90E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27218D14BA000BA90E7 /* Foundation.framework */; };
 		C53AB27518D14BA000BA90E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53AB27418D14BA000BA90E7 /* CoreGraphics.framework */; };
@@ -30,7 +29,6 @@
 		C53AB2AE18D15C8400BA90E7 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C53AB2AD18D15C8400BA90E7 /* nav_menu_icon@2x.png */; };
 		C53AB2B418D189F800BA90E7 /* GBSeriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB2B318D189F800BA90E7 /* GBSeriesModel.m */; };
 		C53AB2B718D18A3200BA90E7 /* GBInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB2B618D18A3200BA90E7 /* GBInfoModel.m */; };
-		C544070C18E0023F007283A0 /* GBInfoContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C544070B18E0023F007283A0 /* GBInfoContentViewController.m */; };
 		C5977D3018DD8B6800B36B97 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5977D2F18DD8B6800B36B97 /* libxml2.dylib */; };
 		C5977D3218DD8B7100B36B97 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5977D3118DD8B7100B36B97 /* libz.dylib */; };
 		C5977D3418DD8B7800B36B97 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5977D3318DD8B7800B36B97 /* CFNetwork.framework */; };
@@ -49,7 +47,7 @@
 		C5A7725018DEC872005D507D /* GBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7724F18DEC872005D507D /* GBCacheManager.m */; };
 		C5AA214518D2A0E0004F5AA4 /* GBSeriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA214418D2A0E0004F5AA4 /* GBSeriesList.m */; };
 		C5AA214818D2A0F5004F5AA4 /* GBInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA214718D2A0F5004F5AA4 /* GBInfoList.m */; };
-		C5C230AA18D8B5B5007FF365 /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5C230A918D8B5B5007FF365 /* Test.xib */; };
+		C5D9BD0618E7C462000FE941 /* GBInfoContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D9BD0518E7C462000FE941 /* GBInfoContentViewController.m */; };
 		C5EB942518E6BC540091E90C /* GBGetInfoListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB942418E6BC540091E90C /* GBGetInfoListRequest.m */; };
 		C5EB942818E6C3550091E90C /* GBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB942718E6C3550091E90C /* GBRequest.m */; };
 		C5EB942F18E722AF0091E90C /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB942E18E722AF0091E90C /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -78,8 +76,6 @@
 		C531F8DC18D56A290043D0D5 /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
 		C531F8E218D580CF0043D0D5 /* GBInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoTableViewCell.h; sourceTree = "<group>"; };
 		C531F8E318D580CF0043D0D5 /* GBInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoTableViewCell.m; sourceTree = "<group>"; };
-		C531F8E518D592A50043D0D5 /* GBInfoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoDetailViewController.h; sourceTree = "<group>"; };
-		C531F8E618D592A50043D0D5 /* GBInfoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoDetailViewController.m; sourceTree = "<group>"; };
 		C531F8E918D5AA4D0043D0D5 /* AMScrollingNavbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMScrollingNavbarViewController.h; sourceTree = "<group>"; };
 		C531F8EA18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMScrollingNavbarViewController.m; sourceTree = "<group>"; };
 		C53AB26F18D14BA000BA90E7 /* GuitarBass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarBass.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,8 +98,6 @@
 		C53AB2B318D189F800BA90E7 /* GBSeriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSeriesModel.m; sourceTree = "<group>"; };
 		C53AB2B518D18A3200BA90E7 /* GBInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoModel.h; sourceTree = "<group>"; };
 		C53AB2B618D18A3200BA90E7 /* GBInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoModel.m; sourceTree = "<group>"; };
-		C544070A18E0023F007283A0 /* GBInfoContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoContentViewController.h; sourceTree = "<group>"; };
-		C544070B18E0023F007283A0 /* GBInfoContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoContentViewController.m; sourceTree = "<group>"; };
 		C56FF8E818D45F5E005F8DB1 /* GBSeriesTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSeriesTableViewControllerDelegate.h; sourceTree = "<group>"; };
 		C5977D2F18DD8B6800B36B97 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		C5977D3118DD8B7100B36B97 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -140,7 +134,8 @@
 		C5AA214418D2A0E0004F5AA4 /* GBSeriesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSeriesList.m; sourceTree = "<group>"; };
 		C5AA214618D2A0F5004F5AA4 /* GBInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoList.h; sourceTree = "<group>"; };
 		C5AA214718D2A0F5004F5AA4 /* GBInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoList.m; sourceTree = "<group>"; };
-		C5C230A918D8B5B5007FF365 /* Test.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
+		C5D9BD0418E7C461000FE941 /* GBInfoContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoContentViewController.h; sourceTree = "<group>"; };
+		C5D9BD0518E7C462000FE941 /* GBInfoContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoContentViewController.m; sourceTree = "<group>"; };
 		C5EB942318E6BC540091E90C /* GBGetInfoListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBGetInfoListRequest.h; sourceTree = "<group>"; };
 		C5EB942418E6BC540091E90C /* GBGetInfoListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBGetInfoListRequest.m; sourceTree = "<group>"; };
 		C5EB942618E6C3550091E90C /* GBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBRequest.h; sourceTree = "<group>"; };
@@ -336,15 +331,12 @@
 				C53AB2A718D158F000BA90E7 /* GBInfoTableViewController.m */,
 				C53AB2A918D159B400BA90E7 /* GBSeriesTableViewController.h */,
 				C53AB2AA18D159B400BA90E7 /* GBSeriesTableViewController.m */,
-				C531F8E518D592A50043D0D5 /* GBInfoDetailViewController.h */,
-				C531F8E618D592A50043D0D5 /* GBInfoDetailViewController.m */,
+				C5D9BD0418E7C461000FE941 /* GBInfoContentViewController.h */,
+				C5D9BD0518E7C462000FE941 /* GBInfoContentViewController.m */,
 				C50E4C5718D6C23E008EA971 /* GBWebViewController.h */,
 				C50E4C5818D6C23E008EA971 /* GBWebViewController.m */,
-				C544070A18E0023F007283A0 /* GBInfoContentViewController.h */,
-				C544070B18E0023F007283A0 /* GBInfoContentViewController.m */,
 				C5118A0A18E092CE00A38D35 /* GBInfoDetailView.h */,
 				C5118A0B18E092CE00A38D35 /* GBInfoDetailView.m */,
-				C5C230A918D8B5B5007FF365 /* Test.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -504,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C53AB2AE18D15C8400BA90E7 /* nav_menu_icon@2x.png in Resources */,
-				C5C230AA18D8B5B5007FF365 /* Test.xib in Resources */,
 				C53AB28518D14BA000BA90E7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,7 +519,6 @@
 				C5EB942518E6BC540091E90C /* GBGetInfoListRequest.m in Sources */,
 				C53AB27F18D14BA000BA90E7 /* main.m in Sources */,
 				C5977D6F18DD967100B36B97 /* ASIDataCompressor.m in Sources */,
-				C531F8E718D592A50043D0D5 /* GBInfoDetailViewController.m in Sources */,
 				C531F8E418D580CF0043D0D5 /* GBInfoTableViewCell.m in Sources */,
 				C53AB2AB18D159B400BA90E7 /* GBSeriesTableViewController.m in Sources */,
 				C531F8E018D56A290043D0D5 /* EGOImageLoader.m in Sources */,
@@ -537,6 +527,7 @@
 				C53AB2B718D18A3200BA90E7 /* GBInfoModel.m in Sources */,
 				C531F8DD18D56A290043D0D5 /* EGOCache.m in Sources */,
 				C531F8DE18D56A290043D0D5 /* EGOImageButton.m in Sources */,
+				C5D9BD0618E7C462000FE941 /* GBInfoContentViewController.m in Sources */,
 				C5977D7318DD967100B36B97 /* ASIHTTPRequest.m in Sources */,
 				C5EB942F18E722AF0091E90C /* GDataXMLNode.m in Sources */,
 				C5977D7118DD967100B36B97 /* ASIDownloadCache.m in Sources */,
@@ -549,7 +540,6 @@
 				C5977D6E18DD967100B36B97 /* ASIAuthenticationDialog.m in Sources */,
 				C5977D7018DD967100B36B97 /* ASIDataDecompressor.m in Sources */,
 				C531F8EB18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m in Sources */,
-				C544070C18E0023F007283A0 /* GBInfoContentViewController.m in Sources */,
 				C53AB28318D14BA000BA90E7 /* GBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

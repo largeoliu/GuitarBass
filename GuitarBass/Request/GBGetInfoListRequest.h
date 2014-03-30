@@ -7,6 +7,7 @@
 //
 
 #import "GBRequest.h"
+@protocol GBInfoListRequestDelegate;
 @interface GBGetInfoListRequest : GBRequest
-
+@property (weak) id<GBInfoListRequestDelegate> delegate;
 @end

@@ -10,15 +10,6 @@
 #import "GBSeriesModel.h"
 #import "GDataXMLNode.h"
 @implementation GBSeriesList
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        _array = [NSMutableArray array];
-    }
-    return self;
-}
-
 - (id)init:(GDataXMLElement*)xmlElement
 {
     self = [super init];
@@ -34,7 +25,6 @@
         }
     }
     return self;
-    
 }
 
 - (void)addInfo:(GBSeriesModel*)info

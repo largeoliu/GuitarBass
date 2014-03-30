@@ -6,12 +6,13 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 
-#import "GBInfoModel.h"
-
+@class GBInfoModel;
+@class GDataXMLElement;
 @interface GBInfoList : NSObject
 {
     NSMutableArray *_array;
 }
+- (id)init:(GDataXMLElement*)xmlElement;
 - (void)addInfo:(GBInfoModel*)info;
 - (GBInfoModel*)infoAtIndex:(NSUInteger)index;
 - (NSInteger)count;

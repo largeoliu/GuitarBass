@@ -7,13 +7,22 @@
 //
 
 #import "GBInfoList.h"
-
+#import "GBInfoModel.h"
+#import "GDataXMLNode.h"
 @implementation GBInfoList
-- (id)init
+- (id)init:(GDataXMLElement*)xmlElement
 {
     self = [super init];
     if (self) {
         _array = [NSMutableArray array];
+        NSArray *array = [xmlElement children];
+        for (int i = 0; i < [array count]; i++) {
+            GDataXMLElement *ele = [array objectAtIndex:i];
+            if ([[ele name] isEqualToString:@"entry"]) {
+                GBInfoModel *info = [[GBInfoModel alloc] init:ele];
+                [_array addObject:info];
+            }
+        }
     }
     return self;
 }

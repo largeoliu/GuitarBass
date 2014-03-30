@@ -7,20 +7,15 @@
 //
 
 #import "GBGetInfoListRequest.h"
-#import "ASIHTTPRequest.h"
-
+#import "GBInfoList.h"
+#import "GBInfoListRequestDelegate.h"
 @implementation GBGetInfoListRequest
-- (id)init
+@synthesize delegate = _delegate;
+- (NSString*)url
 {
-    self = [super init];
-    if (self) {
-        NSURL *url = [NSURL URLWithString:@"http://guitarbass.sinaapp.com/atom"];
-        ASIHTTPRequest *_cacheRequest = [ASIHTTPRequest requestWithURL:url];
-        [_cacheRequest setDelegate:self];
-        [_cacheRequest setDidFailSelector:@selector(webPageFetchFailed:)];
-        [_cacheRequest setDidFinishSelector:@selector(webPageFetchSucceeded:)];
-        [_cacheRequest startAsynchronous];
-    }
-    return self;
+    return @"atom";
 }
-@end
+- (void)doElement:(GDataXMLElement*)xml
+{
+    [_delegate onReceiveInfoListSucceed:[[GBInfoList alloc] init:xml]];
+}@end

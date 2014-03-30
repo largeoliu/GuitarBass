@@ -8,6 +8,7 @@
 
 #import "GBInfoContentViewController.h"
 #import "GBInfoList.h"
+#import "GBInfoModel.h"
 #import "GBInfoDetailView.h"
 #define TAG_START 100
 @interface GBInfoContentViewController ()
