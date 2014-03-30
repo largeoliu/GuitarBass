@@ -35,32 +35,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithRed:29.0/255.0 green:29.0/255.0 blue:29.0/255.0 alpha:1.0];
     CGRect tableFrame = self.view.bounds;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height+20;
+
     }else{
         tableFrame.size.height -= self.navigationController.navigationBar.bounds.size.height;
     }
     _scrollView = [[UIScrollView alloc] initWithFrame:tableFrame];
-    _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*_infoList.count, tableFrame.size.height);
+    _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*_infoList.count, tableFrame.size.height-20);
     _scrollView.delegate = self;
     _scrollView.pagingEnabled = YES;
     _scrollView.bounces = NO;
     _scrollView.showsHorizontalScrollIndicator = YES;
-    _scrollView.showsVerticalScrollIndicator = NO;
+    _scrollView.showsVerticalScrollIndicator = YES;
     [self.view addSubview:_scrollView];
     
     [self pageChanged];
     [_scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*_currentIndex, 0) animated:NO];
-    
-    //[self followScrollView:_scrollView];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)pageChanged
 {
     for (int i = _currentIndex-1; i <= _currentIndex+1; i++) {
         if (i >= 0 && i < _infoList.count&&![_scrollView viewWithTag:(TAG_START+i)]) {
-            GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*i, 0, _scrollView.bounds.size.width, _scrollView.bounds.size.height)];
+            GBInfoDetailView *idv = [[GBInfoDetailView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width*i, 0, _scrollView.bounds.size.width, _scrollView.bounds.size.height-20)];
             [idv loadWithInfo:[_infoList infoAtIndex:i]];
             idv.tag = (TAG_START+i);
             [_scrollView addSubview:idv];

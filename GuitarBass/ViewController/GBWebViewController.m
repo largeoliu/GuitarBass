@@ -41,9 +41,10 @@
     _webView.scalesPageToFit = YES;
     _webView.backgroundColor = [UIColor whiteColor];
     _webView.delegate = self;
-    _webView.scrollView.scrollEnabled = NO;
     
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_webView.frame), self.view.bounds.size.width, WebToolBarHeight)];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, _webView.frame.origin.y+_webView.frame.size.height, self.view.bounds.size.width, WebToolBarHeight)];
+    toolbar.layer.anchorPoint = CGPointMake(0, 1);
+    toolbar.layer.position = CGPointMake(0, self.view.bounds.size.height);
     toolbar.translucent = YES;
     [self.view addSubview:toolbar];
     
