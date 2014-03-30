@@ -55,8 +55,10 @@
 - (void)loadData
 {
     _listRequest = [[GBGetInfoListRequest alloc] init];
+    _listRequest.seriesId = _currentSeries.uniqueId;
     _listRequest.delegate = self;
-    [_listRequest start];}
+    [_listRequest start];
+}
 
 - (void)onReceiveInfoListSucceed:(GBInfoList*)infoList
 {
@@ -67,10 +69,8 @@
 
 - (void)onLoadSeries:(GBSeriesModel*)seriesModel
 {
+    _currentSeries = seriesModel;
     self.title = seriesModel.title;
-    
-    int seriesId = seriesModel.uniqueId;
-    
     [self loadData];
 }
 

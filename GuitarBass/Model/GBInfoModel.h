@@ -8,7 +8,8 @@
 
 @class GDataXMLElement;
 @interface GBInfoModel : NSObject
-- (id)init:(GDataXMLElement*)xmlElement;
+- (id)init:(GDataXMLElement*)xmlElement seriesId:(NSString*)seriesId;
+@property (nonatomic, strong) NSString *seriesId;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *thumbUrl;
 @property (nonatomic, strong) NSString *webUlr;

@@ -10,10 +10,11 @@
 #import "GBInfoList.h"
 #import "GBInfoListRequestDelegate.h"
 @implementation GBGetInfoListRequest
+@synthesize seriesId = _seriesId;
 @synthesize delegate = _delegate;
 - (NSString*)url
 {
-    return @"atom";
+    return [NSString stringWithFormat:@"atom/%@", _seriesId];
 }
 - (void)doElement:(GDataXMLElement*)xml
 {

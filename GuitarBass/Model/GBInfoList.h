@@ -12,6 +12,7 @@
 {
     NSMutableArray *_array;
 }
+@property (nonatomic, strong) NSString *seriesId;
 - (id)init:(GDataXMLElement*)xmlElement;
 - (void)addInfo:(GBInfoModel*)info;
 - (GBInfoModel*)infoAtIndex:(NSUInteger)index;

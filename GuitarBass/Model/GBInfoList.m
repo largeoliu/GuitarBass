@@ -10,6 +10,7 @@
 #import "GBInfoModel.h"
 #import "GDataXMLNode.h"
 @implementation GBInfoList
+@synthesize seriesId = _seriesId;
 - (id)init:(GDataXMLElement*)xmlElement
 {
     self = [super init];
@@ -19,8 +20,10 @@
         for (int i = 0; i < [array count]; i++) {
             GDataXMLElement *ele = [array objectAtIndex:i];
             if ([[ele name] isEqualToString:@"entry"]) {
-                GBInfoModel *info = [[GBInfoModel alloc] init:ele];
+                GBInfoModel *info = [[GBInfoModel alloc] init:ele seriesId:_seriesId];
                 [_array addObject:info];
+            }else if ([[ele name] isEqualToString:@"id"]){
+                _seriesId = [ele stringValue];
             }
         }
     }

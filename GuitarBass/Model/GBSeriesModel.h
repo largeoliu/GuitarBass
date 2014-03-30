@@ -8,6 +8,6 @@
 @class GDataXMLElement;
 @interface GBSeriesModel : NSObject
 - (id)init:(GDataXMLElement*)xmlElement;
-@property (assign) NSString *uniqueId;
+@property (nonatomic, strong) NSString *uniqueId;
 @property (nonatomic, strong) NSString *title;
 @end

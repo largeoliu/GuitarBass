@@ -333,10 +333,10 @@
 				C53AB2AA18D159B400BA90E7 /* GBSeriesTableViewController.m */,
 				C5D9BD0418E7C461000FE941 /* GBInfoContentViewController.h */,
 				C5D9BD0518E7C462000FE941 /* GBInfoContentViewController.m */,
-				C50E4C5718D6C23E008EA971 /* GBWebViewController.h */,
-				C50E4C5818D6C23E008EA971 /* GBWebViewController.m */,
 				C5118A0A18E092CE00A38D35 /* GBInfoDetailView.h */,
 				C5118A0B18E092CE00A38D35 /* GBInfoDetailView.m */,
+				C50E4C5718D6C23E008EA971 /* GBWebViewController.h */,
+				C50E4C5818D6C23E008EA971 /* GBWebViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

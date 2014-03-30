@@ -9,5 +9,6 @@
 #import "GBRequest.h"
 @protocol GBInfoListRequestDelegate;
 @interface GBGetInfoListRequest : GBRequest
+@property (nonatomic, strong) NSString *seriesId;
 @property (weak) id<GBInfoListRequestDelegate> delegate;
 @end

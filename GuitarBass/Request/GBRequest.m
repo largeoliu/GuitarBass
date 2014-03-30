@@ -12,7 +12,8 @@
 @implementation GBRequest
 - (void)start
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://guitarbass.sinaapp.com/%@", [self url]]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", ROOTURL, [self url]]];
+    NSLog(@"url:%@", url);
     ASIHTTPRequest *_cacheRequest = [[ASIHTTPRequest alloc] initWithURL:url];
     [_cacheRequest setDelegate:self];
     [_cacheRequest setDidFinishSelector:@selector(httpSucceeded:)];

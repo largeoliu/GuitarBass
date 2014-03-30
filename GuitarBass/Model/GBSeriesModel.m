@@ -20,7 +20,7 @@
             GDataXMLElement *ele = [array objectAtIndex:i];
             if ([[ele name] isEqualToString:@"title"]) {
                 _title = [ele stringValue];
-            }else if ([[ele name] isEqualToString:@"title"]){
+            }else if ([[ele name] isEqualToString:@"id"]){
                 _uniqueId = [ele stringValue];
             }
         }
