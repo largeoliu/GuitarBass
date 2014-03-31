@@ -82,7 +82,6 @@
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBarTintColor:)]) {
         [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     }
-    
 }
 
 - (void)cancel

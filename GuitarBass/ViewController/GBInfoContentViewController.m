@@ -10,6 +10,7 @@
 #import "GBInfoList.h"
 #import "GBInfoModel.h"
 #import "GBInfoDetailView.h"
+
 #define TAG_START 100
 @interface GBInfoContentViewController ()
 
@@ -53,7 +54,18 @@
     
     [self pageChanged];
     [_scrollView setContentOffset:CGPointMake(self.view.bounds.size.width*_currentIndex, 0) animated:NO];
+    
+    
+    QBKOverlayMenuViewOffset offset;
+    offset.bottomOffset = 0;
+    
+    QBKOverlayMenuView *_qbkOverlayMenu = [[QBKOverlayMenuView alloc] initWithDelegate:self position:kQBKOverlayMenuViewPositionBottom offset:offset];
+    [_qbkOverlayMenu setParentView:self.view];
+    [_qbkOverlayMenu addButtonWithImage:[UIImage imageNamed:@"rw-button.png"] index:0];
+    [_qbkOverlayMenu addButtonWithImage:[UIImage imageNamed:@"rw-button.png"] index:1];
+    [_qbkOverlayMenu addButtonWithImage:[UIImage imageNamed:@"rw-button.png"] index:2];
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -96,6 +108,24 @@
         }
         [self pageChanged];
     }
+}
+
+
+- (void)overlayMenuView:(QBKOverlayMenuView *)overlayMenuView didActivateAdditionalButtonWithIndex:(NSInteger)index
+{
+    if (index == 2) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (void)didPerformUnfoldActionInOverlayMenuView:(QBKOverlayMenuView *)overlaymenuView
+{
+
+}
+
+- (void)didPerformFoldActionInOverlayMenuView:(QBKOverlayMenuView *)overlaymenuView
+{
+
 }
 
 @end
