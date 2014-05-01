@@ -29,6 +29,19 @@
 		C53AB2AE18D15C8400BA90E7 /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C53AB2AD18D15C8400BA90E7 /* nav_menu_icon@2x.png */; };
 		C53AB2B418D189F800BA90E7 /* GBSeriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB2B318D189F800BA90E7 /* GBSeriesModel.m */; };
 		C53AB2B718D18A3200BA90E7 /* GBInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C53AB2B618D18A3200BA90E7 /* GBInfoModel.m */; };
+		C56CE6D018FA80440021B1F2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C56CE6CF18FA80440021B1F2 /* libsqlite3.dylib */; };
+		C56CE6EE18FA80B30021B1F2 /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6D518FA80B30021B1F2 /* FMDatabase+InMemoryOnDiskIO.m */; };
+		C56CE6EF18FA80B30021B1F2 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6D818FA80B30021B1F2 /* FMDatabase.m */; };
+		C56CE6F018FA80B30021B1F2 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6DA18FA80B30021B1F2 /* FMDatabaseAdditions.m */; };
+		C56CE6F118FA80B30021B1F2 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6DC18FA80B30021B1F2 /* FMDatabasePool.m */; };
+		C56CE6F218FA80B30021B1F2 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6DE18FA80B30021B1F2 /* FMDatabaseQueue.m */; };
+		C56CE6F318FA80B30021B1F2 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6E018FA80B30021B1F2 /* FMResultSet.m */; };
+		C56CE6F418FA80B30021B1F2 /* LKDB+Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6E318FA80B30021B1F2 /* LKDB+Manager.m */; };
+		C56CE6F518FA80B30021B1F2 /* LKDB+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6E518FA80B30021B1F2 /* LKDB+Mapping.m */; };
+		C56CE6F618FA80B30021B1F2 /* LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6E718FA80B30021B1F2 /* LKDBHelper.m */; };
+		C56CE6F718FA80B30021B1F2 /* LKDBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6E918FA80B30021B1F2 /* LKDBUtils.m */; };
+		C56CE6F818FA80B30021B1F2 /* NSObject+LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6EB18FA80B30021B1F2 /* NSObject+LKDBHelper.m */; };
+		C56CE6F918FA80B30021B1F2 /* NSObject+LKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C56CE6ED18FA80B30021B1F2 /* NSObject+LKModel.m */; };
 		C5977D3018DD8B6800B36B97 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5977D2F18DD8B6800B36B97 /* libxml2.dylib */; };
 		C5977D3218DD8B7100B36B97 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5977D3118DD8B7100B36B97 /* libz.dylib */; };
 		C5977D3418DD8B7800B36B97 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5977D3318DD8B7800B36B97 /* CFNetwork.framework */; };
@@ -102,6 +115,31 @@
 		C53AB2B318D189F800BA90E7 /* GBSeriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSeriesModel.m; sourceTree = "<group>"; };
 		C53AB2B518D18A3200BA90E7 /* GBInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBInfoModel.h; sourceTree = "<group>"; };
 		C53AB2B618D18A3200BA90E7 /* GBInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBInfoModel.m; sourceTree = "<group>"; };
+		C56CE6CF18FA80440021B1F2 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C56CE6D418FA80B30021B1F2 /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
+		C56CE6D518FA80B30021B1F2 /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
+		C56CE6D718FA80B30021B1F2 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		C56CE6D818FA80B30021B1F2 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		C56CE6D918FA80B30021B1F2 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		C56CE6DA18FA80B30021B1F2 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		C56CE6DB18FA80B30021B1F2 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		C56CE6DC18FA80B30021B1F2 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		C56CE6DD18FA80B30021B1F2 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		C56CE6DE18FA80B30021B1F2 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		C56CE6DF18FA80B30021B1F2 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		C56CE6E018FA80B30021B1F2 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		C56CE6E218FA80B30021B1F2 /* LKDB+Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKDB+Manager.h"; sourceTree = "<group>"; };
+		C56CE6E318FA80B30021B1F2 /* LKDB+Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKDB+Manager.m"; sourceTree = "<group>"; };
+		C56CE6E418FA80B30021B1F2 /* LKDB+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKDB+Mapping.h"; sourceTree = "<group>"; };
+		C56CE6E518FA80B30021B1F2 /* LKDB+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKDB+Mapping.m"; sourceTree = "<group>"; };
+		C56CE6E618FA80B30021B1F2 /* LKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBHelper.h; sourceTree = "<group>"; };
+		C56CE6E718FA80B30021B1F2 /* LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBHelper.m; sourceTree = "<group>"; };
+		C56CE6E818FA80B30021B1F2 /* LKDBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBUtils.h; sourceTree = "<group>"; };
+		C56CE6E918FA80B30021B1F2 /* LKDBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBUtils.m; sourceTree = "<group>"; };
+		C56CE6EA18FA80B30021B1F2 /* NSObject+LKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKDBHelper.h"; sourceTree = "<group>"; };
+		C56CE6EB18FA80B30021B1F2 /* NSObject+LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKDBHelper.m"; sourceTree = "<group>"; };
+		C56CE6EC18FA80B30021B1F2 /* NSObject+LKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKModel.h"; sourceTree = "<group>"; };
+		C56CE6ED18FA80B30021B1F2 /* NSObject+LKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKModel.m"; sourceTree = "<group>"; };
 		C56FF8E818D45F5E005F8DB1 /* GBSeriesTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSeriesTableViewControllerDelegate.h; sourceTree = "<group>"; };
 		C5977D2F18DD8B6800B36B97 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		C5977D3118DD8B7100B36B97 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -158,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56CE6D018FA80440021B1F2 /* libsqlite3.dylib in Frameworks */,
 				C5977D3818DD8B8B00B36B97 /* SystemConfiguration.framework in Frameworks */,
 				C5977D3618DD8B8100B36B97 /* MobileCoreServices.framework in Frameworks */,
 				C5977D3418DD8B7800B36B97 /* CFNetwork.framework in Frameworks */,
@@ -277,6 +316,7 @@
 		C53AB27118D14BA000BA90E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C56CE6CF18FA80440021B1F2 /* libsqlite3.dylib */,
 				C5977D3718DD8B8B00B36B97 /* SystemConfiguration.framework */,
 				C5977D3518DD8B8100B36B97 /* MobileCoreServices.framework */,
 				C5977D3318DD8B7800B36B97 /* CFNetwork.framework */,
@@ -321,6 +361,7 @@
 		C53AB2A118D1526B00BA90E7 /* thirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C56CE6D118FA80B30021B1F2 /* Data */,
 				C5EB942C18E722AF0091E90C /* XMLSupport */,
 				C5977D8418DD971D00B36B97 /* Reachability */,
 				C5977D3918DD967100B36B97 /* ASIHttp */,
@@ -375,6 +416,69 @@
 				C5AA214718D2A0F5004F5AA4 /* GBInfoList.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C56CE6D118FA80B30021B1F2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C56CE6D218FA80B30021B1F2 /* FMDB */,
+				C56CE6E118FA80B30021B1F2 /* Helper */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C56CE6D218FA80B30021B1F2 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				C56CE6D318FA80B30021B1F2 /* extra */,
+				C56CE6D618FA80B30021B1F2 /* src */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		C56CE6D318FA80B30021B1F2 /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				C56CE6D418FA80B30021B1F2 /* FMDatabase+InMemoryOnDiskIO.h */,
+				C56CE6D518FA80B30021B1F2 /* FMDatabase+InMemoryOnDiskIO.m */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		C56CE6D618FA80B30021B1F2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C56CE6D718FA80B30021B1F2 /* FMDatabase.h */,
+				C56CE6D818FA80B30021B1F2 /* FMDatabase.m */,
+				C56CE6D918FA80B30021B1F2 /* FMDatabaseAdditions.h */,
+				C56CE6DA18FA80B30021B1F2 /* FMDatabaseAdditions.m */,
+				C56CE6DB18FA80B30021B1F2 /* FMDatabasePool.h */,
+				C56CE6DC18FA80B30021B1F2 /* FMDatabasePool.m */,
+				C56CE6DD18FA80B30021B1F2 /* FMDatabaseQueue.h */,
+				C56CE6DE18FA80B30021B1F2 /* FMDatabaseQueue.m */,
+				C56CE6DF18FA80B30021B1F2 /* FMResultSet.h */,
+				C56CE6E018FA80B30021B1F2 /* FMResultSet.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		C56CE6E118FA80B30021B1F2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C56CE6E218FA80B30021B1F2 /* LKDB+Manager.h */,
+				C56CE6E318FA80B30021B1F2 /* LKDB+Manager.m */,
+				C56CE6E418FA80B30021B1F2 /* LKDB+Mapping.h */,
+				C56CE6E518FA80B30021B1F2 /* LKDB+Mapping.m */,
+				C56CE6E618FA80B30021B1F2 /* LKDBHelper.h */,
+				C56CE6E718FA80B30021B1F2 /* LKDBHelper.m */,
+				C56CE6E818FA80B30021B1F2 /* LKDBUtils.h */,
+				C56CE6E918FA80B30021B1F2 /* LKDBUtils.m */,
+				C56CE6EA18FA80B30021B1F2 /* NSObject+LKDBHelper.h */,
+				C56CE6EB18FA80B30021B1F2 /* NSObject+LKDBHelper.m */,
+				C56CE6EC18FA80B30021B1F2 /* NSObject+LKModel.h */,
+				C56CE6ED18FA80B30021B1F2 /* NSObject+LKModel.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		C56FF8E718D45F4D005F8DB1 /* Interface */ = {
@@ -536,6 +640,7 @@
 				C5AA214818D2A0F5004F5AA4 /* GBInfoList.m in Sources */,
 				C5977D7518DD967100B36B97 /* ASINetworkQueue.m in Sources */,
 				C531F8B418D54E580043D0D5 /* GBGetSeriesListRequest.m in Sources */,
+				C56CE6F918FA80B30021B1F2 /* NSObject+LKModel.m in Sources */,
 				C531F8E118D56A290043D0D5 /* EGOImageView.m in Sources */,
 				C50E4C5A18D6C23E008EA971 /* GBWebViewController.m in Sources */,
 				C5AA214518D2A0E0004F5AA4 /* GBSeriesList.m in Sources */,
@@ -547,16 +652,25 @@
 				C531F8E418D580CF0043D0D5 /* GBInfoTableViewCell.m in Sources */,
 				C53AB2AB18D159B400BA90E7 /* GBSeriesTableViewController.m in Sources */,
 				C531F8E018D56A290043D0D5 /* EGOImageLoader.m in Sources */,
+				C56CE6F018FA80B30021B1F2 /* FMDatabaseAdditions.m in Sources */,
+				C56CE6F418FA80B30021B1F2 /* LKDB+Manager.m in Sources */,
+				C56CE6EF18FA80B30021B1F2 /* FMDatabase.m in Sources */,
+				C56CE6F518FA80B30021B1F2 /* LKDB+Mapping.m in Sources */,
 				C5977D7418DD967100B36B97 /* ASIInputStream.m in Sources */,
+				C56CE6F718FA80B30021B1F2 /* LKDBUtils.m in Sources */,
 				C5118A0C18E092CE00A38D35 /* GBInfoDetailView.m in Sources */,
+				C56CE6F818FA80B30021B1F2 /* NSObject+LKDBHelper.m in Sources */,
 				C53AB2B718D18A3200BA90E7 /* GBInfoModel.m in Sources */,
 				C531F8DD18D56A290043D0D5 /* EGOCache.m in Sources */,
 				C531F8DE18D56A290043D0D5 /* EGOImageButton.m in Sources */,
 				C5D9BD0618E7C462000FE941 /* GBInfoContentViewController.m in Sources */,
 				C5977D7318DD967100B36B97 /* ASIHTTPRequest.m in Sources */,
 				C5EB942F18E722AF0091E90C /* GDataXMLNode.m in Sources */,
+				C56CE6F218FA80B30021B1F2 /* FMDatabaseQueue.m in Sources */,
+				C56CE6EE18FA80B30021B1F2 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				C5977D7118DD967100B36B97 /* ASIDownloadCache.m in Sources */,
 				C53AB2A818D158F000BA90E7 /* GBInfoTableViewController.m in Sources */,
+				C56CE6F118FA80B30021B1F2 /* FMDatabasePool.m in Sources */,
 				C5A3D00D18E9C0E5001004DD /* QBKOverlayMenuView.m in Sources */,
 				C5EB942818E6C3550091E90C /* GBRequest.m in Sources */,
 				C5977D7218DD967100B36B97 /* ASIFormDataRequest.m in Sources */,
@@ -565,6 +679,8 @@
 				C5A7725018DEC872005D507D /* GBCacheManager.m in Sources */,
 				C5977D6E18DD967100B36B97 /* ASIAuthenticationDialog.m in Sources */,
 				C5977D7018DD967100B36B97 /* ASIDataDecompressor.m in Sources */,
+				C56CE6F618FA80B30021B1F2 /* LKDBHelper.m in Sources */,
+				C56CE6F318FA80B30021B1F2 /* FMResultSet.m in Sources */,
 				C531F8EB18D5AA4D0043D0D5 /* AMScrollingNavbarViewController.m in Sources */,
 				C53AB28318D14BA000BA90E7 /* GBAppDelegate.m in Sources */,
 			);
