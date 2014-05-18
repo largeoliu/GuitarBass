@@ -37,6 +37,11 @@
 {
     _seriesList = nil;
     _seriesList = seriesList;
+    
+    GBSeriesModel *seriesModel = [_seriesList infoAtIndex:0];
+    if (_delegate) {
+        [_delegate onLoadSeries:seriesModel];
+    }
 }
 
 - (void)loadView
