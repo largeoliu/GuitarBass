@@ -9,6 +9,8 @@
 #import "GBSeriesTableViewController.h"
 #import "GBAppDelegate.h"
 #import "GBSeriesList.h"
+#import "FMDatabase.h"
+#import "FMDatabaseAdditions.h"
 
 @interface GBSeriesTableViewController ()
 
@@ -42,6 +44,25 @@
     if (_delegate) {
         [_delegate onLoadSeries:seriesModel];
     }
+    
+    NSString* docsdir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString* dbpath = [docsdir stringByAppendingPathComponent:@"cache.sqlite"];
+    FMDatabase* db = [FMDatabase databaseWithPath:dbpath];
+    [db open];
+    [db setShouldCacheStatements:YES];
+    
+    if(![db tableExists:@"lastSeries"]){
+        [db executeUpdate:@"CREATE TABLES lastSeries(seriesId TEXT, title TEXT)"];
+    }
+    
+    FMResultSet *rs = [db executeQuery:@"select * from series"];
+    while ([rs next]) {
+        NSLog(@"%@ %@",
+              [rs stringForColumn:@"firstname"],
+              [rs stringForColumn:@"lastname"]);
+    }
+    
+    [db close];
 }
 
 - (void)loadView
