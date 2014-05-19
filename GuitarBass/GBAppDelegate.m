@@ -10,6 +10,7 @@
 #import "GBInfoTableViewController.h"
 #import "GBSeriesTableViewController.h"
 #import "DDMenuController.h"
+#import "FMDatabase.h"
 
 @implementation GBAppDelegate
 
@@ -35,9 +36,9 @@ static id currentAppDelegate = nil;
     DDMenuController *rootController = [[DDMenuController alloc] initWithRootViewController:navController];
     _menuController = rootController;
     
-    GBSeriesTableViewController *leftController = [[GBSeriesTableViewController alloc] init];
+    GBSeriesTableViewController *leftController = [[GBSeriesTableViewController alloc] initWithDelegate:mainController];
     rootController.leftViewController = leftController;
-    leftController.delegate = mainController;
+
     
     self.window.rootViewController = rootController;
     
@@ -56,6 +57,13 @@ static id currentAppDelegate = nil;
 - (void)showRootController
 {
     [_menuController showRootController:YES];
+}
+
++ (FMDatabase*)shareCacheDB
+{
+    NSString* docsdir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString* dbpath = [docsdir stringByAppendingPathComponent:@"cache.sqlite"];
+    return [FMDatabase databaseWithPath:dbpath];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

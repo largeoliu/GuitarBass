@@ -54,6 +54,8 @@
 
 - (void)loadData
 {
+    [_listRequest cancel];
+    _listRequest = nil;
     _listRequest = [[GBGetInfoListRequest alloc] init];
     _listRequest.seriesId = _currentSeries.uniqueId;
     _listRequest.delegate = self;
@@ -69,6 +71,9 @@
 
 - (void)onLoadSeries:(GBSeriesModel*)seriesModel
 {
+    if ([_currentSeries.uniqueId isEqualToString:seriesModel.uniqueId]) {
+        return;
+    }
     _currentSeries = seriesModel;
     self.title = seriesModel.title;
     [self loadData];

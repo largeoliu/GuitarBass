@@ -17,5 +17,6 @@
     GBSeriesList *_seriesList;
     GBGetSeriesListRequest *_listRequest;
 }
+- (id)initWithDelegate:(id<GBSeriesTableViewControllerDelegate>)delegate;
 @property (weak) id<GBSeriesTableViewControllerDelegate> delegate;
 @end

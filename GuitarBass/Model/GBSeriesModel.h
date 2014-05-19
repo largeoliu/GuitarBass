@@ -6,8 +6,10 @@
 //  Copyright (c) 2014年 tinmanarts. All rights reserved.
 //
 @class GDataXMLElement;
+@class FMResultSet;
 @interface GBSeriesModel : NSObject
-- (id)init:(GDataXMLElement*)xmlElement;
+- (id)initWithXML:(GDataXMLElement*)xmlElement;
+- (id)initWithSQL:(FMResultSet*)resultSet;
 @property (nonatomic, strong) NSString *uniqueId;
 @property (nonatomic, strong) NSString *title;
 @end

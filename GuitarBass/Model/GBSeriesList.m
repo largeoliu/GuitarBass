@@ -9,8 +9,9 @@
 #import "GBSeriesList.h"
 #import "GBSeriesModel.h"
 #import "GDataXMLNode.h"
+#import "FMResultSet.h"
 @implementation GBSeriesList
-- (id)init:(GDataXMLElement*)xmlElement
+- (id)initWithXML:(GDataXMLElement*)xmlElement
 {
     self = [super init];
     if (self) {
@@ -19,9 +20,22 @@
         for (int i = 0; i < [array count]; i++) {
             GDataXMLElement *ele = [array objectAtIndex:i];
             if ([[ele name] isEqualToString:@"entry"]) {
-                GBSeriesModel *series = [[GBSeriesModel alloc] init:ele];
+                GBSeriesModel *series = [[GBSeriesModel alloc] initWithXML:ele];
                 [_array addObject:series];
             }
+        }
+    }
+    return self;
+}
+
+- (id)initWithSQL:(FMResultSet*)resultSet
+{
+    self = [super init];
+    if (self) {
+        _array = [NSMutableArray array];
+        while ([resultSet next]) {
+            GBSeriesModel *series = [[GBSeriesModel alloc] initWithSQL:resultSet];
+            [_array addObject:series];
         }
     }
     return self;

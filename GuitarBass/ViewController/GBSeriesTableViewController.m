@@ -18,10 +18,11 @@
 
 @implementation GBSeriesTableViewController
 @synthesize delegate = _delegate;
-- (id)init
+- (id)initWithDelegate:(id<GBSeriesTableViewControllerDelegate>)delegate
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
+        _delegate = delegate;
         self.view.backgroundColor = [UIColor colorWithRed:45/255.0 green:45/255.0 blue:45/255.0 alpha:1.0];
     }
     return self;
@@ -37,6 +38,12 @@
 
 - (void)onReceiveSeriesListSucceed:(GBSeriesList*)seriesList
 {
+    [self loadWithSeriesList:seriesList];
+    [self cacheList];
+}
+
+- (void)loadWithSeriesList:(GBSeriesList*)seriesList
+{
     _seriesList = nil;
     _seriesList = seriesList;
     
@@ -44,26 +51,32 @@
     if (_delegate) {
         [_delegate onLoadSeries:seriesModel];
     }
-    
-    NSString* docsdir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString* dbpath = [docsdir stringByAppendingPathComponent:@"cache.sqlite"];
-    FMDatabase* db = [FMDatabase databaseWithPath:dbpath];
+}
+
+- (void)loadWithCache
+{
+    FMDatabase* db = [GBAppDelegate shareCacheDB];
     [db open];
-    [db setShouldCacheStatements:YES];
-    
-    if(![db tableExists:@"lastSeries"]){
-        [db executeUpdate:@"CREATE TABLES lastSeries(seriesId TEXT, title TEXT)"];
-    }
-    
-    FMResultSet *rs = [db executeQuery:@"select * from series"];
-    while ([rs next]) {
-        NSLog(@"%@ %@",
-              [rs stringForColumn:@"firstname"],
-              [rs stringForColumn:@"lastname"]);
-    }
-    
+    FMResultSet *rs = [db executeQuery:@"select * from lastSeries"];
+    GBSeriesList *seriesList = [[GBSeriesList alloc] initWithSQL:rs];
+    [self loadWithSeriesList:seriesList];
+    [rs close];
     [db close];
 }
+
+- (void)cacheList
+{
+    FMDatabase* db = [GBAppDelegate shareCacheDB];
+    [db open];
+    [db executeUpdate:@"CREATE TABLE IF NOT EXISTS lastSeries(seriesId TEXT, title TEXT);"];
+    [db executeUpdate:@"DELETE FROM lastSeries;"];
+    for (int i = 0; i < _seriesList.count; i++) {
+        GBSeriesModel *sm = [_seriesList infoAtIndex:i];
+        [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO lastSeries VALUES('%@','%@');", sm.uniqueId, sm.title]];
+    }
+    [db close];
+}
+
 
 - (void)loadView
 {
@@ -92,7 +105,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self loadWithCache];
     [self loadData];
 }
 

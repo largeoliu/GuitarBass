@@ -8,11 +8,13 @@
 
 @class GBSeriesModel;
 @class GDataXMLElement;
+@class FMResultSet;
 @interface GBSeriesList : NSObject
 {
     NSMutableArray *_array;
 }
-- (id)init:(GDataXMLElement*)xmlElement;
+- (id)initWithXML:(GDataXMLElement*)xmlElement;
+- (id)initWithSQL:(FMResultSet*)resultSet;
 - (void)addInfo:(GBSeriesModel*)info;
 - (GBSeriesModel*)infoAtIndex:(NSUInteger)index;
 - (NSInteger)count;

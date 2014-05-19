@@ -8,10 +8,11 @@
 
 #import "GBSeriesModel.h"
 #import "GDataXMLNode.h"
+#import "FMResultSet.h"
 @implementation GBSeriesModel
 @synthesize uniqueId = _uniqueId;
 @synthesize title = _title;
-- (id)init:(GDataXMLElement*)xmlElement
+- (id)initWithXML:(GDataXMLElement*)xmlElement
 {
     self = [super init];
     if (self) {
@@ -24,6 +25,16 @@
                 _uniqueId = [ele stringValue];
             }
         }
+    }
+    return self;
+}
+
+- (id)initWithSQL:(FMResultSet*)resultSet
+{
+    self = [super init];
+    if (self) {
+        _uniqueId = [resultSet stringForColumn:@"seriesId"];
+        _title = [resultSet stringForColumn:@"title"];
     }
     return self;
 }

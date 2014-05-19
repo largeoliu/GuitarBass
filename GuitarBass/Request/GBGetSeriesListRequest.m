@@ -17,6 +17,6 @@
 }
 - (void)doElement:(GDataXMLElement*)xml
 {
-    [_delegate onReceiveSeriesListSucceed:[[GBSeriesList alloc] init:xml]];
+    [_delegate onReceiveSeriesListSucceed:[[GBSeriesList alloc] initWithXML:xml]];
 }
 @end

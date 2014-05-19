@@ -7,8 +7,13 @@
 //
 
 @class GDataXMLElement;
+@class ASIHTTPRequest;
 @interface GBRequest : NSObject
+{
+    ASIHTTPRequest *_cacheRequest;
+}
 - (void)start;
+- (void)cancel;
 - (NSString*)url;
 - (void)doElement:(GDataXMLElement*)xml;
 @end
