@@ -8,12 +8,16 @@
 
 @class GBInfoModel;
 @class GDataXMLElement;
+@class FMResultSet;
+@class FMDatabase;
 @interface GBInfoList : NSObject
 {
     NSMutableArray *_array;
 }
 @property (nonatomic, strong) NSString *seriesId;
-- (id)init:(GDataXMLElement*)xmlElement;
+- (id)initWithXML:(GDataXMLElement*)xmlElement;
+- (id)initWithSQL:(FMResultSet*)resultSet;
+- (void)saveToSQL:(FMDatabase*)database tableName:(NSString*)tableName;
 - (void)addInfo:(GBInfoModel*)info;
 - (GBInfoModel*)infoAtIndex:(NSUInteger)index;
 - (NSInteger)count;

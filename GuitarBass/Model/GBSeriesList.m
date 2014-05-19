@@ -9,7 +9,7 @@
 #import "GBSeriesList.h"
 #import "GBSeriesModel.h"
 #import "GDataXMLNode.h"
-#import "FMResultSet.h"
+#import "FMDatabase.h"
 @implementation GBSeriesList
 - (id)initWithXML:(GDataXMLElement*)xmlElement
 {
@@ -41,12 +41,20 @@
     return self;
 }
 
-- (void)addInfo:(GBSeriesModel*)info
+- (void)saveToSQL:(FMDatabase*)database tableName:(NSString*)tableName
 {
-    [_array addObject:info];
+    for (int i = 0; i < [self count]; i++) {
+        GBSeriesModel *sm = [self seriesAtIndex:i];
+        [sm saveToSQL:database tableName:tableName];
+    }
 }
 
-- (GBSeriesModel*)infoAtIndex:(NSUInteger)index
+- (void)addSeries:(GBSeriesModel*)series
+{
+    [_array addObject:series];
+}
+
+- (GBSeriesModel*)seriesAtIndex:(NSUInteger)index
 {
     return [_array objectAtIndex:index];
 }

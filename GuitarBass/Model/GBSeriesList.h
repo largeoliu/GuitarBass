@@ -9,13 +9,15 @@
 @class GBSeriesModel;
 @class GDataXMLElement;
 @class FMResultSet;
+@class FMDatabase;
 @interface GBSeriesList : NSObject
 {
     NSMutableArray *_array;
 }
 - (id)initWithXML:(GDataXMLElement*)xmlElement;
 - (id)initWithSQL:(FMResultSet*)resultSet;
-- (void)addInfo:(GBSeriesModel*)info;
-- (GBSeriesModel*)infoAtIndex:(NSUInteger)index;
+- (void)saveToSQL:(FMDatabase*)database tableName:(NSString*)tableName;
+- (void)addSeries:(GBSeriesModel*)series;
+- (GBSeriesModel*)seriesAtIndex:(NSUInteger)index;
 - (NSInteger)count;
 @end

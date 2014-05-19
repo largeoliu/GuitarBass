@@ -7,9 +7,14 @@
 //
 
 @class GDataXMLElement;
+@class FMResultSet;
+@class FMDatabase;
 @interface GBInfoModel : NSObject
-- (id)init:(GDataXMLElement*)xmlElement seriesId:(NSString*)seriesId;
+- (id)initWithXML:(GDataXMLElement*)xmlElement seriesId:(NSString*)seriesId;
+- (id)initWithSQL:(FMResultSet*)resultSet;
+- (void)saveToSQL:(FMDatabase*)database tableName:(NSString*)tableName;
 @property (nonatomic, strong) NSString *seriesId;
+@property (nonatomic, strong) NSString *infoId;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *thumbUrl;
 @property (nonatomic, strong) NSString *webUlr;

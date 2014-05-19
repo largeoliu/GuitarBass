@@ -11,6 +11,9 @@
 #import "GBSeriesModel.h"
 #import "GBInfoList.h"
 #import "GBInfoContentViewController.h"
+#import "GBAppDelegate.h"
+#import "FMDatabase.h"
+#import "FMDatabaseAdditions.h"
 
 @interface GBInfoTableViewController ()
 
@@ -52,6 +55,29 @@
     _tableView.showsVerticalScrollIndicator = YES;
 }
 
+- (void)loadWithCache
+{
+    NSString *tableName = [NSString stringWithFormat:@"series%@", _currentSeries.uniqueId];
+    FMDatabase* db = [GBAppDelegate shareCacheDB];
+    [db open];
+    FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"select * from %@", tableName]];
+    GBInfoList *infoList = [[GBInfoList alloc] initWithSQL:rs];
+    [self loadWithInfoList:infoList];
+    [rs close];
+    [db close];
+}
+
+- (void)cacheList
+{
+    NSString *tableName = [NSString stringWithFormat:@"series%@", _currentSeries.uniqueId];
+    FMDatabase* db = [GBAppDelegate shareCacheDB];
+    [db open];
+    [db executeUpdate:[NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(seriesId TEXT, infoId TEXT, title TEXT, thumbUrl TEXT);", tableName]];
+    [db executeUpdate:[NSString stringWithFormat:@"DELETE FROM %@;", tableName]];
+    [_infoList saveToSQL:db tableName:tableName];
+    [db close];
+}
+
 - (void)loadData
 {
     [_listRequest cancel];
@@ -62,7 +88,14 @@
     [_listRequest start];
 }
 
+
 - (void)onReceiveInfoListSucceed:(GBInfoList*)infoList
+{
+    [self loadWithInfoList:infoList];
+    [self cacheList];
+}
+
+- (void)loadWithInfoList:(GBInfoList*)infoList
 {
     _infoList = nil;
     _infoList = infoList;
@@ -76,6 +109,7 @@
     }
     _currentSeries = seriesModel;
     self.title = seriesModel.title;
+    [self loadWithCache];
     [self loadData];
 }
 

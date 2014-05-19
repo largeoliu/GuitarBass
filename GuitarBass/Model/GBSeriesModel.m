@@ -8,7 +8,7 @@
 
 #import "GBSeriesModel.h"
 #import "GDataXMLNode.h"
-#import "FMResultSet.h"
+#import "FMDatabase.h"
 @implementation GBSeriesModel
 @synthesize uniqueId = _uniqueId;
 @synthesize title = _title;
@@ -37,5 +37,10 @@
         _title = [resultSet stringForColumn:@"title"];
     }
     return self;
+}
+
+- (void)saveToSQL:(FMDatabase*)database tableName:(NSString*)tableName
+{
+    [database executeUpdate:[NSString stringWithFormat:@"INSERT INTO %@ VALUES('%@','%@');", tableName,  _uniqueId, _title]];
 }
 @end

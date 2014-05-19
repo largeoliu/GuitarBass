@@ -47,7 +47,7 @@
     _seriesList = nil;
     _seriesList = seriesList;
     
-    GBSeriesModel *seriesModel = [_seriesList infoAtIndex:0];
+    GBSeriesModel *seriesModel = [_seriesList seriesAtIndex:0];
     if (_delegate) {
         [_delegate onLoadSeries:seriesModel];
     }
@@ -70,10 +70,7 @@
     [db open];
     [db executeUpdate:@"CREATE TABLE IF NOT EXISTS lastSeries(seriesId TEXT, title TEXT);"];
     [db executeUpdate:@"DELETE FROM lastSeries;"];
-    for (int i = 0; i < _seriesList.count; i++) {
-        GBSeriesModel *sm = [_seriesList infoAtIndex:i];
-        [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO lastSeries VALUES('%@','%@');", sm.uniqueId, sm.title]];
-    }
+    [_seriesList saveToSQL:db tableName:@"lastSeries"];
     [db close];
 }
 
@@ -138,7 +135,7 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
         cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0];
     }
-    GBSeriesModel *seriesModel = [_seriesList infoAtIndex:indexPath.row];
+    GBSeriesModel *seriesModel = [_seriesList seriesAtIndex:indexPath.row];
     cell.textLabel.text = seriesModel.title;
     
     return cell;
@@ -148,7 +145,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    GBSeriesModel *seriesModel = [_seriesList infoAtIndex:indexPath.row];
+    GBSeriesModel *seriesModel = [_seriesList seriesAtIndex:indexPath.row];
     if (_delegate) {
         [_delegate onLoadSeries:seriesModel];
     }

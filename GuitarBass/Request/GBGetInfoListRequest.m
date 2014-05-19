@@ -18,5 +18,5 @@
 }
 - (void)doElement:(GDataXMLElement*)xml
 {
-    [_delegate onReceiveInfoListSucceed:[[GBInfoList alloc] init:xml]];
+    [_delegate onReceiveInfoListSucceed:[[GBInfoList alloc] initWithXML:xml]];
 }@end
