@@ -47,9 +47,11 @@
     _seriesList = nil;
     _seriesList = seriesList;
     
-    GBSeriesModel *seriesModel = [_seriesList seriesAtIndex:0];
-    if (_delegate) {
-        [_delegate onLoadSeries:seriesModel];
+    if (_seriesList && _seriesList.count > 0) {
+        GBSeriesModel *seriesModel = [_seriesList seriesAtIndex:0];
+        if (_delegate) {
+            [_delegate onLoadSeries:seriesModel];
+        }
     }
 }
 
